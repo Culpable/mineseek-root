@@ -12,6 +12,7 @@ import {
   ChevronUpDownIcon,
   MinusIcon,
 } from '@heroicons/react/16/solid'
+import { notFound } from 'next/navigation'
 
 export const metadata = {
   title: 'Pricing',
@@ -478,11 +479,32 @@ function FrequentlyAskedQuestions() {
   )
 }
 
-export default function Pricing({ searchParams }) {
-  let tier =
-    typeof searchParams.tier === 'string'
-      ? tiers.find(({ slug }) => slug === searchParams.tier)
-      : tiers[0]
+/**
+ * Generate static parameters for all pricing tiers
+ * This tells Next.js which versions of the page to pre-render
+ */
+export function generateStaticParams() {
+  return [
+    { tier: undefined }, // Default case
+    ...tiers.map(({ slug }) => ({ tier: slug }))
+  ]
+}
+
+/**
+ * Pricing page component
+ * Modified to handle static generation while maintaining tier functionality
+ */
+export default function Pricing({ params }) {
+  // Find the selected tier or default to the first one
+  // Using params instead of searchParams for static generation
+  const selectedTier = params?.tier 
+    ? tiers.find(({ slug }) => slug === params.tier) 
+    : tiers[0]
+
+  // If invalid tier slug provided, return 404
+  if (params?.tier && !selectedTier) {
+    notFound()
+  }
 
   return (
     <main className="overflow-hidden">
@@ -492,10 +514,13 @@ export default function Pricing({ searchParams }) {
       </Container>
       <Header />
       <PricingCards />
-      <PricingTable selectedTier={tier} />
+      <PricingTable selectedTier={selectedTier} />
       <Testimonial />
       <FrequentlyAskedQuestions />
       <Footer />
     </main>
   )
 }
+
+// Set page to force-static
+export const dynamic = 'force-static'

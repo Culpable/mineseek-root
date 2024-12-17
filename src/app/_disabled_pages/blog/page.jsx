@@ -11,6 +11,7 @@ import {
   getFeaturedPosts,
   getPosts,
   getPostsCount,
+  client,
 } from '@/sanity/queries'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import {
@@ -260,18 +261,58 @@ async function Pagination({ page, category }) {
   )
 }
 
-export default async function Blog({ searchParams }) {
-  let page =
-    'page' in searchParams
-      ? typeof searchParams.page === 'string' && parseInt(searchParams.page) > 1
-        ? parseInt(searchParams.page)
-        : notFound()
-      : 1
+/**
+ * Calculate total number of pages based on posts count
+ */
+async function getTotalPages() {
+  const count = await getPostsCount()
+  return Math.ceil(count / postsPerPage)
+}
 
-  let category =
-    typeof searchParams.category === 'string'
-      ? searchParams.category
-      : undefined
+/**
+ * Generate static parameters for blog pagination
+ * Pre-renders a reasonable number of pages based on actual post count
+ */
+export async function generateStaticParams() {
+  const totalPages = await getTotalPages()
+  
+  // Generate array of page numbers from 1 to totalPages
+  return Array.from({ length: totalPages }, (_, i) => ({
+    page: (i + 1).toString()
+  }))
+}
+
+/**
+ * Blog listing page component
+ * Modified to handle static generation while maintaining pagination
+ */
+export default async function Blog({ params }) {
+  // Convert page parameter to number, default to 1
+  const currentPage = params.page ? parseInt(params.page) : 1
+  
+  // Validate page number
+  if (isNaN(currentPage) || currentPage < 1) {
+    notFound()
+  }
+  
+  // Get posts and total count using existing query functions
+  const posts = await getPosts(
+    (currentPage - 1) * postsPerPage,
+    currentPage * postsPerPage
+  )
+  
+  // If no posts found and not on first page, return 404
+  if (!posts.length && currentPage !== 1) {
+    notFound()
+  }
+  
+  // Get total pages for pagination
+  const totalPages = await getTotalPages()
+  
+  // Validate current page is not beyond total pages
+  if (currentPage > totalPages) {
+    notFound()
+  }
 
   return (
     <main className="overflow-hidden">
@@ -280,20 +321,26 @@ export default async function Blog({ searchParams }) {
         <Navbar />
         <Subheading className="mt-16">Blog</Subheading>
         <Heading as="h1" className="mt-2">
-          What’s happening at Radiant.
+          What's happening at Radiant.
         </Heading>
         <Lead className="mt-6 max-w-3xl">
           Stay informed with product updates, company news, and insights on how
           to sell smarter at your company.
         </Lead>
       </Container>
-      {page === 1 && !category && <FeaturedPosts />}
+      {currentPage === 1 && <FeaturedPosts />}
       <Container className="mt-16 pb-24">
         <Categories selected={category} />
-        <Posts page={page} category={category} />
-        <Pagination page={page} category={category} />
+        <Posts page={currentPage} />
+        <Pagination page={currentPage} />
       </Container>
       <Footer />
     </main>
   )
 }
+
+// Force static generation
+export const dynamic = 'force-static'
+
+// Revalidate content periodically (e.g., every hour)
+export const revalidate = 3600
