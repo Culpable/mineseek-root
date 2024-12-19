@@ -14,7 +14,7 @@ import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 const links = [
   { href: '/pricing', label: 'Pricing' },
   { href: '/company', label: 'Company' },
-  { href: '/login', label: 'Login' },
+  { href: 'https://app.mineseek.com.au/', label: 'Login' },
 ]
 
 function DesktopNav() {

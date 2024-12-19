@@ -2,9 +2,11 @@ import '@/styles/tailwind.css'
 
 export const metadata = {
   title: {
-    template: '%s - Radiant',
-    default: 'Radiant - Close every deal',
+    template: '%s | Mine Seek',
+    default: 'Mine Seek: Accelerate Exploration with AI',
   },
+  description:
+    'Mine Seek is helping exploration teams across Australia radically accelerate their geological analysis through AI-powered insights. Find out how agentic AI revolutionises exploration.',
 }
 
 export default function RootLayout({ children }) {

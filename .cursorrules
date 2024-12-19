@@ -1,12 +1,12 @@
 <project_details>
 
 <description>
-These rules apply specifically to the Radiant template repository and should be used for all code within this project scope.
+These rules apply specifically to the Mine Seek template repository and should be used for all code within this project scope.
 </description>
 
 <content_rules>
 - All text must be in British English
-- Use ’ instead of ' as an apostrophe on any frontend words (words that display to the user). e.g. Let's, not Let's
+- Use ’ instead of ' as an apostrophe on any frontend words (words that display to the user). e.g. Let’s, not Let's
 - All marketing copy is embedded directly in JSX files
 </content_rules>
 
