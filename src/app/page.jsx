@@ -32,10 +32,10 @@ function Hero() {
             Find what others miss.
           </h1>
           <p className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-            Transform unstructured geological information into strategic exploration decisions with Mine Seek's AI platform.
+            Transform unstructured geological information into strategic exploration decisions with Mine Seek’s AI platform.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="#">Get started</Button>
+            <Button href="https://app.mineseek.com.au/">Get started</Button>
             <Button variant="secondary" href="/pricing">
               See pricing
             </Button>
