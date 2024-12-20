@@ -22,85 +22,98 @@ const tiers = [
   {
     name: 'Starter',
     slug: 'starter',
-    description: 'Everything you need to start selling.',
-    priceMonthly: 99,
+    description: 'Get started with AI-powered geological insights.',
+    priceMonthly: 899,
+    currency: 'AUD',
     href: '#',
     highlights: [
-      { description: 'Up to 3 team members' },
-      { description: 'Up to 5 deal progress boards' },
-      { description: 'Source leads from select platforms' },
-      { description: 'RadiantAI integrations', disabled: true },
-      { description: 'Competitor analysis', disabled: true },
+      //   { description: 'Up to 5 team members' },
+      { description: 'Process up to 500 documents monthly' },
+      { description: 'Basic geological query augmentation' },
+      { description: 'Standard map visualisation' },
+      { description: 'Agentic AI workflows', disabled: true },
+      { description: 'Internal data integration', disabled: true },
+      { description: 'Export capabilities', disabled: true },
+      { description: 'Custom in-house training', disabled: true },
     ],
     features: [
-      { section: 'Features', name: 'Accounts', value: 3 },
-      { section: 'Features', name: 'Deal progress boards', value: 5 },
-      { section: 'Features', name: 'Sourcing platforms', value: 'Select' },
-      { section: 'Features', name: 'Contacts', value: 100 },
-      { section: 'Features', name: 'AI assisted outreach', value: false },
-      { section: 'Analysis', name: 'Competitor analysis', value: false },
-      { section: 'Analysis', name: 'Dashboard reporting', value: false },
-      { section: 'Analysis', name: 'Community insights', value: false },
-      { section: 'Analysis', name: 'Performance analysis', value: false },
+      //   { section: 'Search', name: 'User accounts', value: 5 },
+      { section: 'Search', name: 'Concurrent searches', value: 1 },
+      { section: 'Processing', name: 'Monthly documents', value: '500' },
+      { section: 'Processing', name: 'Document storage', value: '50 GB' },
+      { section: 'AI Features', name: 'Query augmentation', value: 'Basic' },
+      { section: 'AI Features', name: 'Geological image analysis', value: 'Basic' },
+      { section: 'AI Features', name: 'Agentic AI workflows', value: false },
+      { section: 'Analysis', name: 'Map visualisation', value: 'Standard' },
+      { section: 'Analysis', name: 'Export capabilities', value: false },
       { section: 'Support', name: 'Email support', value: true },
-      { section: 'Support', name: '24 / 7 call center support', value: false },
-      { section: 'Support', name: 'Dedicated account manager', value: false },
+      { section: 'Support', name: 'In-House Training', value: false },
     ],
   },
   {
     name: 'Growth',
     slug: 'growth',
-    description: 'All the extras for your growing team.',
-    priceMonthly: 149,
+    description: 'Accelerate discoveries with advanced AI tools.',
+    priceMonthly: 1799,
+    currency: 'AUD',
     href: '#',
     highlights: [
-      { description: 'Up to 10 team members' },
-      { description: 'Unlimited deal progress boards' },
-      { description: 'Source leads from over 50 verified platforms' },
-      { description: 'RadiantAI integrations' },
-      { description: '5 competitor analyses per month' },
+      //   { description: 'Up to 15 team members' },
+      { description: 'Process up to 5,000 documents monthly' },
+      { description: 'Advanced geological query augmentation' },
+      { description: 'Interactive map visualisation' },
+      { description: 'Agentic AI workflows' },
+      { description: 'Internal data integration', disabled: true },
+      { description: 'Export capabilities', disabled: true },
+      { description: 'Custom in-house training', disabled: true },
     ],
     features: [
-      { section: 'Features', name: 'Accounts', value: 10 },
-      { section: 'Features', name: 'Deal progress boards', value: 'Unlimited' },
-      { section: 'Features', name: 'Sourcing platforms', value: '100+' },
-      { section: 'Features', name: 'Contacts', value: 1000 },
-      { section: 'Features', name: 'AI assisted outreach', value: true },
-      { section: 'Analysis', name: 'Competitor analysis', value: '5 / month' },
-      { section: 'Analysis', name: 'Dashboard reporting', value: true },
-      { section: 'Analysis', name: 'Community insights', value: true },
-      { section: 'Analysis', name: 'Performance analysis', value: true },
+      //   { section: 'Search', name: 'User accounts', value: 15 },
+      { section: 'Search', name: 'Concurrent searches', value: 5 },
+      { section: 'Processing', name: 'Monthly documents', value: '5,000' },
+      { section: 'Processing', name: 'Document storage', value: '500 GB' },
+      { section: 'AI Features', name: 'Query augmentation', value: 'Advanced' },
+      { section: 'AI Features', name: 'Geological image analysis', value: 'Advanced' },
+      { section: 'AI Features', name: 'Agentic AI workflows', value: 'Standard' },
+      { section: 'Analysis', name: 'Map visualisation', value: 'Interactive' },
+      { section: 'Analysis', name: 'Export capabilities', value: false },
       { section: 'Support', name: 'Email support', value: true },
-      { section: 'Support', name: '24 / 7 call center support', value: true },
-      { section: 'Support', name: 'Dedicated account manager', value: false },
+      { section: 'Support', name: 'In-House Training', value: false },
     ],
   },
   {
     name: 'Enterprise',
     slug: 'enterprise',
-    description: 'Added flexibility to close deals at scale.',
-    priceMonthly: 299,
+    description: 'Complete AI solution for frontier exploration teams.',
+    priceMonthly: null,
+    priceLabel: 'Custom',
+    currency: 'AUD',
     href: '#',
     highlights: [
-      { description: 'Unlimited active team members' },
-      { description: 'Unlimited deal progress boards' },
-      { description: 'Source leads from over 100 verified platforms' },
-      { description: 'RadiantAI integrations' },
-      { description: 'Unlimited competitor analyses' },
+      //   { description: 'Unlimited team members' },
+      { description: 'Unlimited document processing' },
+      { description: 'Advanced geological query augmentation' },
+      { description: 'Interactive map visualisation' },
+      { description: 'Customised agentic AI workflows' },
+      { description: 'Internal data integration' },
+      { description: 'Export capabilities' },
+      { description: 'Custom in-house training' },
     ],
     features: [
-      { section: 'Features', name: 'Accounts', value: 'Unlimited' },
-      { section: 'Features', name: 'Deal progress boards', value: 'Unlimited' },
-      { section: 'Features', name: 'Sourcing platforms', value: '100+' },
-      { section: 'Features', name: 'Contacts', value: 'Unlimited' },
-      { section: 'Features', name: 'AI assisted outreach', value: true },
-      { section: 'Analysis', name: 'Competitor analysis', value: 'Unlimited' },
-      { section: 'Analysis', name: 'Dashboard reporting', value: true },
-      { section: 'Analysis', name: 'Community insights', value: true },
-      { section: 'Analysis', name: 'Performance analysis', value: true },
+      //   { section: 'Search', name: 'User accounts', value: 'Unlimited' },
+      { section: 'Search', name: 'Concurrent searches', value: 'Unlimited' },
+      { section: 'Processing', name: 'Monthly documents', value: 'Unlimited' },
+      { section: 'Processing', name: 'Document storage', value: 'Unlimited' },
+      { section: 'Processing', name: 'Private Data Integration', value: true },
+      { section: 'AI Features', name: 'Query augmentation', value: 'Custom' },
+      { section: 'AI Features', name: 'Geological image analysis', value: 'Custom' },
+      { section: 'AI Features', name: 'Agentic AI workflows', value: 'Custom' },
+      { section: 'Analysis', name: 'Map visualisation', value: 'Interactive' },
+      { section: 'Analysis', name: 'Export capabilities', value: true },
+      { section: 'Support', name: 'Dedicated support', value: true },
       { section: 'Support', name: 'Email support', value: true },
-      { section: 'Support', name: '24 / 7 call center support', value: true },
-      { section: 'Support', name: 'Dedicated account manager', value: true },
+      { section: 'Support', name: 'In-House Training', value: true },
+      { section: 'Support', name: 'In-house training', value: true },
     ],
   },
 ]
@@ -108,10 +121,10 @@ const tiers = [
 function Header() {
   return (
     <Container className="mt-16">
-      <Heading as="h1">Pricing that grows with your team size.</Heading>
+      <Heading as="h1">Pricing plans for teams of all sizes</Heading>
       <Lead className="mt-6 max-w-3xl">
-        Companies all over the world have closed millions of deals with Radiant.
-        Sign up today and start selling smarter.
+        Mining companies across Australia use Mine Seek to accelerate their exploration programmes.
+        Book a demo today.
       </Lead>
     </Container>
   )
@@ -127,7 +140,7 @@ function PricingCards() {
             <PricingCard key={tierIndex} tier={tier} />
           ))}
         </div>
-        <LogoCloud className="mt-24" />
+        {/* <LogoCloud className="mt-24" /> */}
       </Container>
     </div>
   )
@@ -141,20 +154,28 @@ function PricingCard({ tier }) {
           <Subheading>{tier.name}</Subheading>
           <p className="mt-2 text-sm/6 text-gray-950/75">{tier.description}</p>
           <div className="mt-8 flex items-center gap-4">
-            <div className="text-5xl font-medium text-gray-950">
-              ${tier.priceMonthly}
-            </div>
-            <div className="text-sm/5 text-gray-950/75">
-              <p>USD</p>
-              <p>per month</p>
-            </div>
+            {tier.priceMonthly ? (
+              <>
+                <div className="text-5xl font-medium text-gray-950">
+                  ${tier.priceMonthly}
+                </div>
+                <div className="text-sm/5 text-gray-950/75">
+                  <p>AUD/user</p>
+                  <p>per month</p>
+                </div>
+              </>
+            ) : (
+              <div className="text-5xl font-medium text-gray-950">
+                {tier.priceLabel}
+              </div>
+            )}
           </div>
           <div className="mt-8">
-            <Button href={tier.href}>Start a free trial</Button>
+            <Button href={tier.href}>Get Started</Button>
           </div>
           <div className="mt-8">
             <h3 className="text-sm/6 font-medium text-gray-950">
-              Start selling with:
+              Key features:
             </h3>
             <ul className="mt-3 space-y-3">
               {tier.highlights.map((props, featureIndex) => (
@@ -368,15 +389,14 @@ function Testimonial() {
             <figure className="mx-auto flex max-w-xl flex-col gap-16 max-lg:text-center">
               <blockquote>
                 <p className="relative text-3xl tracking-tight text-white before:absolute before:-translate-x-full before:content-['“'] after:absolute after:content-['”'] lg:text-4xl">
-                  Thanks to Radiant, we’re finding new leads that we never
-                  would have found with legal methods.
+                  Mine Seek’s ability to cross-reference multiple data sources has radically accelerated our desicion making. We're making more informed decisions with greater confidence.
                 </p>
               </blockquote>
               <figcaption className="mt-auto">
-                <p className="text-sm/6 font-medium text-white">Tina Yards</p>
+                <p className="text-sm/6 font-medium text-white">Stephanie</p>
                 <p className="text-sm/6 font-medium">
                   <span className="bg-gradient-to-r from-[#fff1be] from-[28%] via-[#ee87cb] via-[70%] to-[#b060ff] bg-clip-text text-transparent">
-                    VP of Sales, Protocol
+                    Mining Exploration Lead
                   </span>
                 </p>
               </figcaption>
@@ -481,7 +501,7 @@ function PricingContent() {
       <PricingCards />
       <PricingTable selectedTier={selectedTier} />
       <Testimonial />
-      <FrequentlyAskedQuestions />
+      {/* <FrequentlyAskedQuestions /> */}
     </>
   )
 }

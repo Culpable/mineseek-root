@@ -69,7 +69,7 @@ function BentoSection() {
     <Container>
       <Subheading>Exploration</Subheading>
       <Heading as="h3" className="mt-2 max-w-3xl">
-        Simple, intuitive, and fast.
+        Simple, intuitive, fast.
       </Heading>
 
       <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
