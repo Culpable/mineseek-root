@@ -1,5 +1,6 @@
 'use client'
 
+import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
@@ -469,22 +470,32 @@ function FrequentlyAskedQuestions() {
   )
 }
 
-export function PricingClient() {
+function PricingContent() {
   const searchParams = useSearchParams()
   const selectedSlug = searchParams.get('tier') || 'starter'
   const selectedTier = tiers.find(tier => tier.slug === selectedSlug) || tiers[0]
 
+  return (
+    <>
+      <Header />
+      <PricingCards />
+      <PricingTable selectedTier={selectedTier} />
+      <Testimonial />
+      <FrequentlyAskedQuestions />
+    </>
+  )
+}
+
+export function PricingClient() {
   return (
     <main className="overflow-hidden">
       <GradientBackground />
       <Container>
         <Navbar />
       </Container>
-      <Header />
-      <PricingCards />
-      <PricingTable selectedTier={selectedTier} />
-      <Testimonial />
-      <FrequentlyAskedQuestions />
+      <Suspense fallback={<PricingCards />}>
+        <PricingContent />
+      </Suspense>
       <Footer />
     </main>
   )
