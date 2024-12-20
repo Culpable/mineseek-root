@@ -367,7 +367,7 @@ function Testimonial() {
           <div className="flex max-lg:mt-16 lg:col-span-2 lg:px-16">
             <figure className="mx-auto flex max-w-xl flex-col gap-16 max-lg:text-center">
               <blockquote>
-                <p className='relative text-3xl tracking-tight text-white before:absolute before:-translate-x-full before:content-["\u201C"] after:absolute after:content-["\u201D"] lg:text-4xl'>
+                <p className="relative text-3xl tracking-tight text-white before:absolute before:-translate-x-full before:content-['“'] after:absolute after:content-['”'] lg:text-4xl">
                   Thanks to Radiant, we’re finding new leads that we never
                   would have found with legal methods.
                 </p>
