@@ -18,6 +18,7 @@ These rules apply specifically to the Mine Seek template repository and should b
   - No server-side functionality required
   - All blog/CMS features currently disabled
   - Builds to static output
+  - URL parameters for interactive features
 - Component Architecture:
   - Use Server Components by default (no 'use client' directive)
   - Client Components required for:
@@ -25,8 +26,10 @@ These rules apply specifically to the Mine Seek template repository and should b
     - Mobile navigation
     - Animated numbers
     - Interactive pricing tables
+    - URL parameter handling
   - Split interactive components into separate files
   - Mark Client Components with 'use client' directive
+  - Keep metadata in server components
 </technical_requirements>
 
 <key_templates>
@@ -51,7 +54,8 @@ src/
 │   ├── company/
 │   │   └── page.jsx: Company page with team and mission
 │   ├── pricing/
-│   │   └── page.jsx: Pricing plans and features
+│   │   ├── page.jsx: Server component with metadata
+│   │   └── pricing-client.jsx: Interactive pricing UI with URL parameters
 │   └── login/
 │       └── page.jsx: Authentication page
 ├── styles/

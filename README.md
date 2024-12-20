@@ -86,6 +86,8 @@ src/
 │   ├── page.jsx         # Homepage with features
 │   ├── company/         # Company page with team
 │   ├── pricing/         # Pricing plans
+│   │   ├── page.jsx     # Server component with metadata
+│   │   └── pricing-client.jsx # Interactive pricing UI
 │   └── login/           # Authentication page
 └── styles/
     └── tailwind.css     # Tailwind configuration
@@ -100,12 +102,6 @@ Currently disabled but preserved in `_disabled_pages/`:
 
 The site auto-updates when files in `/src` are modified.
 
-### Key component locations
-- Navigation: `src/components/navbar.jsx`
-- Footer: `src/components/footer.jsx`
-- Social links: `src/components/footer.jsx`
-- Feature cards: `src/components/bento-card.jsx`
-
 ### Component Architecture
 - Server Components are the default (no 'use client' directive needed)
 - Client Components should be used only when necessary for:
@@ -113,16 +109,90 @@ The site auto-updates when files in `/src` are modified.
   - Mobile navigation
   - Animated numbers
   - Interactive pricing tables
+  - URL parameter handling
 - Interactive components should be split into separate files
 - Client Components must be marked with 'use client' directive
+- Metadata should remain in server components
 - Example structure:
   ```
   components/
-  ├── testimonials.jsx    # Client Component (carousel)
-  ├── navbar.jsx         # Mixed (mobile menu is client)
+  ├── testimonials.jsx     # Client Component (carousel)
+  ├── navbar.jsx          # Mixed (mobile menu is client)
   ├── animated-number.jsx # Client Component
   └── button.jsx         # Server Component
   ```
+
+### Interactive Features with URL Parameters
+
+The site uses URL parameters for interactive features, particularly in the pricing page. This approach:
+- Maintains static site generation capability
+- Enables direct linking to specific states
+- Works with browser history
+
+Example implementation in pricing:
+```javascript
+// pricing/page.jsx - Server Component
+export const metadata = {
+  title: 'Pricing',
+  description: '...'
+}
+
+export default function Pricing() {
+  return <PricingClient />
+}
+
+// pricing/pricing-client.jsx - Client Component
+'use client'
+
+export function PricingClient() {
+  const searchParams = useSearchParams()
+  const selectedSlug = searchParams.get('tier') || 'starter'
+  const selectedTier = tiers.find(tier => tier.slug === selectedSlug) || tiers[0]
+  // ... render components
+}
+```
+
+### Pricing Page Structure
+
+The pricing page is split into two components:
+1. `page.jsx`: Server Component
+   - Handles metadata
+   - Minimal server-side code
+
+2. `pricing-client.jsx`: Client Component
+   - Handles URL parameters
+   - Interactive pricing table
+   - Mobile-responsive design
+   - Tier selection via URL: `/pricing?tier=starter`
+
+#### Modifying Pricing Tiers
+
+The pricing configuration is stored in `pricing-client.jsx`:
+```javascript
+const tiers = [
+  {
+    name: 'Starter',
+    slug: 'starter',
+    description: '...',
+    priceMonthly: 99,
+    highlights: [...],
+    features: [
+      {
+        section: 'Features',
+        name: 'Feature Name',
+        value: true | false | number | string
+      }
+    ]
+  }
+]
+```
+
+To add or modify tiers:
+1. Edit the `tiers` array in `pricing-client.jsx`
+2. Ensure each tier has a unique `slug`
+3. Include all required properties
+4. Features can have boolean, numeric, or string values
+5. Group features by sections for the comparison table
 
 ## Documentation
 
