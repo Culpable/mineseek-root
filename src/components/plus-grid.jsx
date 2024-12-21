@@ -26,32 +26,59 @@ export function PlusGridRow({ className = '', children }) {
   )
 }
 
-export function PlusGridItem({ className = '', children }) {
+export function PlusGridItem({ className = '', isLogo = false, children }) {
   return (
     <div className={clsx(className, 'group/item relative')}>
+      {/* Top left dot - stays the same for both logo and nav items */}
       <PlusGridIcon
         placement="top left"
         className="hidden group-first/item:block"
       />
-      <PlusGridIcon placement="top right" />
+      {isLogo ? (
+        // Logo version - Top right dot
+        // Customize the -right-6 value to move the dot:
+        // -right-4 = closer to logo
+        // -right-11 = further from logo
+        <PlusGridIcon 
+          placement="top right"
+          customPosition="-right-11" // <-- Adjust this value for top right logo dot
+        />
+      ) : (
+        // Navigation items - Top right dot (stays at default -right-2)
+        <PlusGridIcon placement="top right" />
+      )}
+      {/* Bottom left dot - stays the same for both logo and nav items */}
       <PlusGridIcon
         placement="bottom left"
         className="hidden group-last/row:group-first/item:block"
       />
-      <PlusGridIcon
-        placement="bottom right"
-        className="hidden group-last/row:block"
-      />
+      {isLogo ? (
+        // Logo version - Bottom right dot
+        // Customize the -right-6 value to move the dot:
+        // -right-4 = closer to logo
+        // -right-11 = further from logo
+        <PlusGridIcon
+          placement="bottom right"
+          customPosition="-right-11"
+          className="hidden group-last/row:block"
+        />
+      ) : (
+        // Navigation items - Bottom right dot (stays at default -right-2)
+        <PlusGridIcon
+          placement="bottom right"
+          className="hidden group-last/row:block"
+        />
+      )}
       {children}
     </div>
   )
 }
 
-export function PlusGridIcon({ className = '', placement }) {
+export function PlusGridIcon({ className = '', placement, customPosition }) {
   let [yAxis, xAxis] = placement.split(' ')
 
   let yClass = yAxis === 'top' ? '-top-2' : '-bottom-2'
-  let xClass = xAxis === 'left' ? '-left-2' : '-right-2'
+  let xClass = customPosition || (xAxis === 'left' ? '-left-2' : '-right-2')
 
   return (
     <svg
