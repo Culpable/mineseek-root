@@ -28,11 +28,17 @@ function Hero() {
       <Container className="relative">
         <Navbar />
         <div className="pb-24 pt-16 sm:pb-32 sm:pt-24 md:pb-48 md:pt-32">
+          {/* <h1 className="font-display text-balance text-6xl/[0.9] font-medium tracking-tight text-gray-950 sm:text-8xl/[0.8] md:text-8xl/[0.8]">
+            AI-powered exploration.
+          </h1> */}
           <h1 className="font-display text-balance text-6xl/[0.9] font-medium tracking-tight text-gray-950 sm:text-8xl/[0.8] md:text-8xl/[0.8]">
             Explore faster.
           </h1>
+          {/* <p className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-xl/8 lg:text-[1.45rem]/[1.875rem]">
+            Accelerate your path from data to discovery with Mine Seek's AI-powered exploration agents.
+          </p> */}
           <p className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-            Transform unstructured geological information into strategic exploration decisions with Mine Seek’s AI platform.
+            Mine Seek accelerates your path from data to discovery with AI-powered exploration agents.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="https://app.mineseek.com.au/">Get started</Button>

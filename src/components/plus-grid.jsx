@@ -29,37 +29,64 @@ export function PlusGridRow({ className = '', children }) {
 export function PlusGridItem({ className = '', isLogo = false, children }) {
   return (
     <div className={clsx(className, 'group/item relative')}>
-      {/* Top left dot - stays the same for both logo and nav items */}
-      <PlusGridIcon
-        placement="top left"
-        className="hidden group-first/item:block"
-      />
+      {isLogo ? (
+        // Logo version - Top left dot
+        // Customize the -left-2 value to move the dot:
+        // -left-3 = further from logo
+        // -left-1 = closer to logo
+        <PlusGridIcon
+          placement="top left"
+          customPosition="-left-3"  // <-- Adjust this value for top left logo dot
+          className="hidden group-first/item:block"
+        />
+      ) : (
+        // Navigation items - Top left dot (stays at default -left-2)
+        <PlusGridIcon
+          placement="top left"
+          className="hidden group-first/item:block"
+        />
+      )}
+
       {isLogo ? (
         // Logo version - Top right dot
         // Customize the -right-6 value to move the dot:
         // -right-4 = closer to logo
-        // -right-11 = further from logo
+        // -right-12 = further from logo
         <PlusGridIcon 
           placement="top right"
-          customPosition="-right-11" // <-- Adjust this value for top right logo dot
+          customPosition="-right-12" // <-- Adjust this value for top right logo dot
         />
       ) : (
         // Navigation items - Top right dot (stays at default -right-2)
         <PlusGridIcon placement="top right" />
       )}
-      {/* Bottom left dot - stays the same for both logo and nav items */}
-      <PlusGridIcon
-        placement="bottom left"
-        className="hidden group-last/row:group-first/item:block"
-      />
+
+      {isLogo ? (
+        // Logo version - Bottom left dot
+        // Customize the -left-2 value to move the dot:
+        // -left-3 = further from logo
+        // -left-1 = closer to logo
+        <PlusGridIcon
+          placement="bottom left"
+          customPosition="-left-3"  // <-- Adjust this value for bottom left logo dot
+          className="hidden group-last/row:group-first/item:block"
+        />
+      ) : (
+        // Navigation items - Bottom left dot (stays at default -left-2)
+        <PlusGridIcon
+          placement="bottom left"
+          className="hidden group-last/row:group-first/item:block"
+        />
+      )}
+
       {isLogo ? (
         // Logo version - Bottom right dot
         // Customize the -right-6 value to move the dot:
         // -right-4 = closer to logo
-        // -right-11 = further from logo
+        // -right-12 = further from logo
         <PlusGridIcon
           placement="bottom right"
-          customPosition="-right-11"
+          customPosition="-right-12"  // <-- Adjust this value for bottom right logo dot
           className="hidden group-last/row:block"
         />
       ) : (
