@@ -162,8 +162,8 @@ export function Footer() {
             <PlusGridRow>
               <div className="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-8">
                 <div className="col-span-2 flex">
-                  <PlusGridItem className="pt-6 lg:pb-6">
-                    <Logo className="h-9" />
+                  <PlusGridItem className="pt-6 lg:pb-6" isFooterLogo={true}>
+                    <Logo className="h-9" variant="footer" />
                   </PlusGridItem>
                 </div>
                 <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-12 lg:col-span-4 lg:grid-cols-subgrid lg:pt-6">
@@ -173,12 +173,12 @@ export function Footer() {
             </PlusGridRow>
             <PlusGridRow className="flex justify-between">
               <div>
-                <PlusGridItem className="py-3">
+                <PlusGridItem className="py-3" isFooterItem={true}>
                   <Copyright />
                 </PlusGridItem>
               </div>
               <div className="flex">
-                <PlusGridItem className="flex items-center gap-8 py-3">
+                <PlusGridItem className="flex items-center gap-8 py-3" isFooterItem={true}>
                   <SocialLinks />
                 </PlusGridItem>
               </div>

@@ -3,10 +3,15 @@
 import { clsx } from 'clsx'
 import { motion } from 'framer-motion'
 
-export function Logo({ className }) {
+export function Logo({ className, variant = 'navbar' }) {
   let transition = {
     duration: 0.5,
     ease: 'easeInOut',
+  }
+
+  const viewBoxSettings = {
+    navbar: "4 0 127 34",
+    footer: "17 0 127 34",
   }
 
   return (
@@ -16,7 +21,7 @@ export function Logo({ className }) {
       whileHover="active"
       width={127}
       height={34}
-      viewBox="0 0 127 34"
+      viewBox={viewBoxSettings[variant]}
       className={clsx(className, 'overflow-visible')}
     >
       <motion.image

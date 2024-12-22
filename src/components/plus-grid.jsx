@@ -26,71 +26,123 @@ export function PlusGridRow({ className = '', children }) {
   )
 }
 
-export function PlusGridItem({ className = '', isLogo = false, children }) {
+export function PlusGridItem({ 
+  className = '', 
+  isLogo = false, 
+  isFooterLogo = false,  // New prop for footer logo
+  isFooterItem = false,  // New prop for footer items
+  children 
+}) {
   return (
     <div className={clsx(className, 'group/item relative')}>
+      {/* Top Left Dot */}
       {isLogo ? (
-        // Logo version - Top left dot
-        // Customize the -left-2 value to move the dot:
-        // -left-3 = further from logo
-        // -left-1 = closer to logo
+        // Navbar logo version
         <PlusGridIcon
           placement="top left"
-          customPosition="-left-3"  // <-- Adjust this value for top left logo dot
+          customPosition="-left-3"
+          className="hidden group-first/item:block"
+        />
+      ) : isFooterLogo ? (
+        // Footer logo version
+        <PlusGridIcon
+          placement="top left"
+          customPosition="-left-6"  // Adjust this value for footer logo
+          className="hidden group-first/item:block"
+        />
+      ) : isFooterItem ? (
+        // Footer items version
+        <PlusGridIcon
+          placement="top left"
+          customPosition="-left-4"  // Adjust this value for footer items
           className="hidden group-first/item:block"
         />
       ) : (
-        // Navigation items - Top left dot (stays at default -left-2)
+        // Default navigation version
         <PlusGridIcon
           placement="top left"
           className="hidden group-first/item:block"
         />
       )}
 
+      {/* Top Right Dot */}
       {isLogo ? (
-        // Logo version - Top right dot
-        // Customize the -right-6 value to move the dot:
-        // -right-4 = closer to logo
-        // -right-12 = further from logo
+        // Navbar logo version
         <PlusGridIcon 
           placement="top right"
-          customPosition="-right-12" // <-- Adjust this value for top right logo dot
+          customPosition="-right-12"
+        />
+      ) : isFooterLogo ? (
+        // Footer logo version
+        <PlusGridIcon 
+          placement="top right"
+          customPosition="-right-8"  // Adjust this value for footer logo
+        />
+      ) : isFooterItem ? (
+        // Footer items version
+        <PlusGridIcon 
+          placement="top right"
+          customPosition="-right-4"  // Adjust this value for footer items
         />
       ) : (
-        // Navigation items - Top right dot (stays at default -right-2)
+        // Default navigation version
         <PlusGridIcon placement="top right" />
       )}
 
+      {/* Bottom Left Dot */}
       {isLogo ? (
-        // Logo version - Bottom left dot
-        // Customize the -left-2 value to move the dot:
-        // -left-3 = further from logo
-        // -left-1 = closer to logo
+        // Navbar logo version
         <PlusGridIcon
           placement="bottom left"
-          customPosition="-left-3"  // <-- Adjust this value for bottom left logo dot
+          customPosition="-left-3"
+          className="hidden group-last/row:group-first/item:block"
+        />
+      ) : isFooterLogo ? (
+        // Footer logo version
+        <PlusGridIcon
+          placement="bottom left"
+          customPosition="-left-6"  // Adjust this value for footer logo
+          className="hidden group-last/row:group-first/item:block"
+        />
+      ) : isFooterItem ? (
+        // Footer items version
+        <PlusGridIcon
+          placement="bottom left"
+          customPosition="-left-4"  // Adjust this value for footer items
           className="hidden group-last/row:group-first/item:block"
         />
       ) : (
-        // Navigation items - Bottom left dot (stays at default -left-2)
+        // Default navigation version
         <PlusGridIcon
           placement="bottom left"
           className="hidden group-last/row:group-first/item:block"
         />
       )}
 
+      {/* Bottom Right Dot */}
       {isLogo ? (
-        // Logo version - Bottom right dot
-        // Customize the -right-6 value to move the dot:
-        // -right-4 = closer to logo
-        // -right-12 = further from logo
+        // Navbar logo version
         <PlusGridIcon
           placement="bottom right"
-          customPosition="-right-12"  // <-- Adjust this value for bottom right logo dot
+          customPosition="-right-12"
+          className="hidden group-last/row:block"
+        />
+      ) : isFooterLogo ? (
+        // Footer logo version
+        <PlusGridIcon
+          placement="bottom right"
+          customPosition="-right-8"  // Adjust this value for footer logo
+          className="hidden group-last/row:block"
+        />
+      ) : isFooterItem ? (
+        // Footer items version
+        <PlusGridIcon
+          placement="bottom right"
+          customPosition="-right-4"  // Adjust this value for footer items
           className="hidden group-last/row:block"
         />
       ) : (
-        // Navigation items - Bottom right dot (stays at default -right-2)
+        // Default navigation version
         <PlusGridIcon
           placement="bottom right"
           className="hidden group-last/row:block"
