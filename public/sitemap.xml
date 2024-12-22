@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://mineseek.com.au</loc>
+    <lastmod>2024-12-22T00:48:57.166Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://mineseek.com.au/pricing</loc>
+    <lastmod>2024-12-22T00:48:57.167Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mineseek.com.au/company</loc>
+    <lastmod>2024-12-22T00:48:57.167Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mineseek.com.au/login</loc>
+    <lastmod>2024-12-22T00:48:57.167Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
