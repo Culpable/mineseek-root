@@ -18,44 +18,44 @@ import { Heading, Subheading } from './text'
 const testimonials = [
   {
     img: '/testimonials/tina-yards.jpg',
-    name: 'Tina Yards',
-    title: 'VP of Sales, Protocol',
+    name: 'Sarah',
+    title: 'Exploration Manager',
     quote:
-      'Thanks to Radiant, we’re finding new leads that we never would have found with legal methods.',
+      'Mine Seek’s AI has transformed how we analyse geological data. We’re finding patterns and opportunities we would have missed.',
   },
   {
     img: '/testimonials/conor-neville.jpg',
-    name: 'Conor Neville',
-    title: 'Head of Customer Success, TaxPal',
+    name: 'James',
+    title: 'Chief Geologist',
     quote:
-      'Radiant made undercutting all of our competitors an absolute breeze.',
+      'The speed at which Mine Seek processes complex geological data is remarkable. It’s cut our analysis time by 70%.',
   },
   {
     img: '/testimonials/amy-chase.jpg',
-    name: 'Amy Chase',
-    title: 'Head of GTM, Pocket',
+    name: 'Emily',
+    title: 'Technical Director',
     quote:
-      'We closed a deal in literally a few minutes because we knew their exact budget.',
+      'Mine Seek’s ability to cross-reference multiple data sources has radically accelerated our decision making.',
   },
   {
     img: '/testimonials/veronica-winton.jpg',
-    name: 'Veronica Winton',
-    title: 'CSO, Planeteria',
+    name: 'Michael',
+    title: 'Exploration Lead',
     quote:
-      'We’ve managed to put two of our main competitors out of business in 6 months.',
+      'The AI agents have revolutionised how we approach geological data analysis. It’s like having an expert team working 24/7.',
   },
   {
     img: '/testimonials/dillon-lenora.jpg',
-    name: 'Dillon Lenora',
-    title: 'VP of Sales, Detax',
-    quote: 'I was able to replace 80% of my team with RadiantAI bots.',
+    name: 'David',
+    title: 'VP Exploration',
+    quote: 'Mine Seek has helped us identify promising targets that traditional methods missed.',
   },
   {
     img: '/testimonials/harriet-arron.jpg',
-    name: 'Harriet Arron',
-    title: 'Account Manager, Commit',
+    name: 'Rachel',
+    title: 'Senior Geologist',
     quote:
-      'I’ve smashed all my targets without having to speak to a lead in months.',
+      'The platform’s geological image analysis capabilities are outstanding. It spots patterns we’d normally spend weeks identifying.',
   },
 ]
 
@@ -147,15 +147,14 @@ function CallToAction() {
   return (
     <div>
       <p className="max-w-sm text-sm/6 text-gray-600">
-        Join the best sellers in the business and start using Radiant to hit
-        your targets today.
+        Join leading mining companies and start accelerating your exploration programme with Mine Seek today.
       </p>
       <div className="mt-2">
         <Link
-          href="#"
+          href="https://app.mineseek.com.au/contact"
           className="inline-flex items-center gap-2 text-sm/6 font-medium text-pink-600"
         >
-          Get started
+          Book a demo
           <ArrowLongRightIcon className="size-5" />
         </Link>
       </div>

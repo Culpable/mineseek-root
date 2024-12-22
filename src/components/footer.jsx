@@ -60,7 +60,7 @@ function Sitemap() {
         </SitemapLinks>
       </div>
       <div>
-        <SitemapHeading>Company</SitemapHeading>
+        <SitemapHeading>About</SitemapHeading>
         <SitemapLinks>
           {/* <SitemapLink href="#">Careers</SitemapLink> */}
           <SitemapLink href="/company">Company</SitemapLink>

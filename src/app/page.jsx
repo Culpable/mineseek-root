@@ -81,46 +81,46 @@ function BentoSection() {
       <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
         <BentoCard
           eyebrow="Insight"
-          title="Get perfect clarity"
-          description="Radiant uses social engineering to build a detailed financial picture of your leads. Know their budget, compensation package, social security number, and more."
+          title="Perfect clarity from complex data"
+          description="Mine Seek's AI agents process vast amounts of geological data to surface key insights. Understand mineral deposits, structural patterns, and exploration opportunities with unprecedented clarity."
           graphic={
             <div className="h-80 bg-[url(/screenshots/profile.png)] bg-[size:1000px_560px] bg-[left_-109px_top_-112px] bg-no-repeat" />
           }
-          fade={['bottom']}
+          fade={["bottom"]}
           className="max-lg:rounded-t-4xl lg:col-span-3 lg:rounded-tl-4xl"
         />
         <BentoCard
           eyebrow="Analysis"
-          title="Undercut your competitors"
-          description="With our advanced data mining, you’ll know which companies your leads are talking to and exactly how much they’re being charged."
+          title="Advanced pattern recognition"
+          description="Our AI identifies subtle geological patterns and correlations across multiple data sources that traditional methods might miss."
           graphic={
             <div className="absolute inset-0 bg-[url(/screenshots/competitors.png)] bg-[size:1100px_650px] bg-[left_-38px_top_-73px] bg-no-repeat" />
           }
-          fade={['bottom']}
+          fade={["bottom"]}
           className="lg:col-span-3 lg:rounded-tr-4xl"
         />
         <BentoCard
           eyebrow="Speed"
-          title="Built for power users"
-          description="It’s never been faster to cold email your entire contact list using our streamlined keyboard shortcuts."
+          title="Built for efficiency"
+          description="Streamlined workflows and intelligent automation help your team process more data in less time."
           graphic={
             <div className="flex size-full pl-10 pt-10">
-              <Keyboard highlighted={['LeftCommand', 'LeftShift', 'D']} />
+              <Keyboard highlighted={["LeftCommand", "LeftShift", "D"]} />
             </div>
           }
           className="lg:col-span-2 lg:rounded-bl-4xl"
         />
         <BentoCard
           eyebrow="Source"
-          title="Get the furthest reach"
-          description="Bypass those inconvenient privacy laws to source leads from the most unexpected places."
+          title="Comprehensive coverage"
+          description="Access and analyse data from multiple geological surveys, research papers, and historical reports in one place."
           graphic={<LogoCluster />}
           className="lg:col-span-2"
         />
         <BentoCard
           eyebrow="Limitless"
-          title="Sell globally"
-          description="Radiant helps you sell in locations currently under international embargo."
+          title="Global insights"
+          description="Explore opportunities across different regions with our worldwide geological database coverage."
           graphic={<Map />}
           className="max-lg:rounded-b-4xl lg:col-span-2 lg:rounded-br-4xl"
         />
@@ -142,41 +142,40 @@ function DarkBentoSection() {
         <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
           <BentoCard
             dark
-            eyebrow="Networking"
-            title="Sell at the speed of light"
-            description="Our RadiantAI chat assistants analyze the sentiment of your conversations in real time, ensuring you're always one step ahead."
+            eyebrow="AI Analysis"
+            title="Real-time geological insights"
+            description="Our AI agents continuously analyse new data and surface relevant insights, ensuring you're always informed of new opportunities."
             graphic={
               <div className="h-80 bg-[url(/screenshots/networking.png)] bg-[size:851px_344px] bg-no-repeat" />
             }
-            fade={['top']}
+            fade={["top"]}
             className="max-lg:rounded-t-4xl lg:col-span-4 lg:rounded-tl-4xl"
           />
           <BentoCard
             dark
             eyebrow="Integrations"
-            title="Meet leads where they are"
-            description="With thousands of integrations, no one will be able to escape your cold outreach."
+            title="Seamless data integration"
+            description="Connect with your existing geological databases and tools for a unified exploration workflow."
             graphic={<LogoTimeline />}
-            // `!overflow-visible` is needed to work around a Chrome bug that disables the mask on the graphic.
             className="z-10 !overflow-visible lg:col-span-2 lg:rounded-tr-4xl"
           />
           <BentoCard
             dark
-            eyebrow="Meetings"
-            title="Smart call scheduling"
-            description="Automatically insert intro calls into your leads' calendars without their consent."
+            eyebrow="Collaboration"
+            title="Team collaboration"
+            description="Share insights and collaborate effectively with your exploration team in real-time."
             graphic={<LinkedAvatars />}
             className="lg:col-span-2 lg:rounded-bl-4xl"
           />
           <BentoCard
             dark
-            eyebrow="Engagement"
-            title="Become a thought leader"
-            description="RadiantAI automatically writes LinkedIn posts that relate current events to B2B sales, helping you build a reputation as a thought leader."
+            eyebrow="Reporting"
+            title="Comprehensive reporting"
+            description="Generate detailed geological reports and visualisations automatically, saving your team valuable time."
             graphic={
               <div className="h-80 bg-[url(/screenshots/engagement.png)] bg-[size:851px_344px] bg-no-repeat" />
             }
-            fade={['top']}
+            fade={["top"]}
             className="max-lg:rounded-b-4xl lg:col-span-4 lg:rounded-br-4xl"
           />
         </div>
