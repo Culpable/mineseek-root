@@ -18,7 +18,7 @@ import { ChevronRightIcon } from '@heroicons/react/16/solid'
 
 export const metadata = {
   description:
-    "Transform unstructured geological information into strategic exploration decisions with Mine Seek’s AI platform.",
+    "Mine Seek accelerates your path from data to discovery with AI-powered exploration agents. Custom made for Australian mining exploration teams.",
 }
 
 function Hero() {
@@ -31,7 +31,7 @@ function Hero() {
           {/* <h1 className="font-display text-balance text-6xl/[0.9] font-medium tracking-tight text-gray-950 sm:text-8xl/[0.8] md:text-8xl/[0.8]">
             AI-powered exploration.
           </h1> */}
-          <h1 className="font-display text-balance text-6xl/[0.9] font-medium tracking-tight text-gray-950 sm:text-8xl/[0.8] md:text-8xl/[0.8]">
+          <h1 className="font-display text-balance text-5xl/[0.9] font-medium tracking-tight text-gray-950 sm:text-8xl/[0.8] md:text-8xl/[0.8]">
             Explore faster.
           </h1>
           {/* <p className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-xl/8 lg:text-[1.45rem]/[1.875rem]">

@@ -26,7 +26,7 @@ function Header() {
             At Mine Seek, we are dedicated to transforming the mining exploration industry through cutting-edge AI technology. Our mission is to help exploration teams rapidly analyse and interpret large volumes of unstructured geological data, saving time and reducing errors in the process.
           </p>
           <p className="mt-8 text-sm/6 text-gray-600">
-            We’re customer-obsessed—putting in the time to understand the complex challenges faced by mining exploration professionals. Through our advanced AI capabilities, including natural language processing, machine learning, and geoscience-specific computer vision, we're helping teams make more informed decisions and discover valuable opportunities faster than ever before.
+            We’re customer-obsessed—putting in the time to understand the complex challenges faced by mining exploration professionals. Through our advanced AI capabilities, including natural language processing, machine learning, and geoscience-specific computer vision, we’re helping teams make more informed decisions and discover valuable opportunities faster than ever before.
           </p>
         </div>
         <div className="pt-20 lg:row-span-2 lg:-mr-16 xl:mr-auto">
@@ -121,7 +121,7 @@ function Team() {
       <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
         <div className="max-w-lg">
           <p className="text-sm/6 text-gray-600">
-            Our journey began when a team of AI researchers and experienced geologists recognised a critical gap in the mining exploration industry: the need for intelligent automation in processing vast amounts of geological data. What started as a research project has evolved into Mine Seek, a comprehensive platform that's revolutionising how exploration teams work.
+            Our journey began when a team of AI researchers and experienced geologists recognised a critical gap in the mining exploration industry: the need for intelligent automation in processing vast amounts of geological data. What started as a research project has evolved into Mine Seek, a comprehensive platform that’s revolutionising how exploration teams work.
           </p>
           <p className="mt-8 text-sm/6 text-gray-600">
             Today, Mine Seek transforms mining exploration by combining advanced AI technologies with deep domain expertise. Our platform helps mining exploration professionals across Australia to rapidly analyse geological data, identify promising opportunities, and make more informed decisions through our integrated, intelligent platform.
@@ -231,7 +231,7 @@ function Investors() {
         <li>
           <img alt="Deccel" src="/investors/deccel.svg" className="h-14" />
           <p className="mt-6 max-w-lg text-sm/6 text-gray-500">
-            Deccel has been at the forefront of innovation in the mining sector, investing in pioneering companies across various aspects of the industry. Their commitment to sustainable and efficient resource discovery aligns perfectly with Mine Seek's mission to revolutionise mining exploration through advanced technology.
+            Deccel has been at the forefront of innovation in the mining sector, investing in pioneering companies across various aspects of the industry. Their commitment to sustainable and efficient resource discovery aligns perfectly with Mine Seek’s mission to revolutionise mining exploration through advanced technology.
           </p>
         </li>
       </ul>
@@ -293,7 +293,7 @@ function Testimonial() {
       <figure className="relative p-10">
         <blockquote>
           <p className="relative text-xl/7 text-white before:absolute before:-translate-x-full before:content-['“'] after:absolute after:content-['”']">
-            We've reduced our data analysis time by 80% and discovered opportunities we would have otherwise missed.
+            We’ve reduced our data analysis time by 80% and discovered opportunities we would have otherwise missed.
           </p>
         </blockquote>
         <figcaption className="mt-6 border-t border-white/20 pt-6">
@@ -317,7 +317,7 @@ function Careers() {
         Join our innovative team.
       </Heading>
       <Lead className="mt-6 max-w-3xl">
-        We're building the future of mining exploration with a global team of experts in AI, machine learning, and geoscience.
+        We’re building the future of mining exploration with a global team of experts in AI, machine learning, and geoscience.
       </Lead>
       <div className="mt-24 grid grid-cols-1 gap-16 lg:grid-cols-[1fr_24rem]">
         <div className="lg:max-w-2xl">
