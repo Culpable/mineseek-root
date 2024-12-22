@@ -70,14 +70,14 @@ function Sitemap() {
         <SitemapHeading>Support</SitemapHeading>
         <SitemapLinks>
           {/* <SitemapLink href="#">Help center</SitemapLink> */}
-          <SitemapLink href="#">Contact</SitemapLink>
+          <SitemapLink href="https://app.mineseek.com.au/contact">Contact</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
         <SitemapHeading>Legal</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="#">Terms of service</SitemapLink>
-          <SitemapLink href="#">Privacy policy</SitemapLink>
+          {/* <SitemapLink href="#">Terms of service</SitemapLink> */}
+          <SitemapLink href="https://app.mineseek.com.au/privacy-policy">Privacy policy</SitemapLink>
         </SitemapLinks>
       </div>
     </>
