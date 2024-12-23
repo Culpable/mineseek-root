@@ -11,7 +11,7 @@ export function Logo({ className, variant = 'navbar' }) {
 
   const viewBoxSettings = {
     navbar: "5 0 127 34",
-    footer: "17 0 127 34",
+    footer: "13 0 127 34",
   }
 
   return (
