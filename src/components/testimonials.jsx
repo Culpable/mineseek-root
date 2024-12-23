@@ -39,7 +39,7 @@ const testimonials = [
   },
   {
     img: '/testimonials/veronica-winton.jpg',
-    name: 'Michael',
+    name: 'Maya',
     title: 'Exploration Lead',
     quote:
       'The AI agents have revolutionised how we approach geological data analysis. It’s like having an expert team working 24/7.',

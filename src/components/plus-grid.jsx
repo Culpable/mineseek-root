@@ -70,7 +70,7 @@ export function PlusGridItem({
         // Navbar logo version
         <PlusGridIcon 
           placement="top right"
-          customPosition="-right-12"
+          customPosition="-right-10"
         />
       ) : isFooterLogo ? (
         // Footer logo version
@@ -124,7 +124,7 @@ export function PlusGridItem({
         // Navbar logo version
         <PlusGridIcon
           placement="bottom right"
-          customPosition="-right-12"
+          customPosition="-right-10"
           className="hidden group-last/row:block"
         />
       ) : isFooterLogo ? (
