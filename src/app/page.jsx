@@ -100,6 +100,20 @@ function BentoSection() {
           className="lg:col-span-3 lg:rounded-tr-4xl"
         />
         <BentoCard
+          eyebrow="Integration"
+          title="Seamless data integration"
+          description="Connect with your existing geological databases and data sources for a unified exploration workflow."
+          graphic={<LogoCluster />}
+          className="lg:col-span-2 lg:rounded-bl-4xl rounded-bl-4xl"
+        />
+        <BentoCard
+          eyebrow="Limitless"
+          title="Global insights"
+          description="Explore opportunities across different regions with our worldwide geological database coverage."
+          graphic={<Map />}
+          className="lg:col-span-2"
+        />
+        <BentoCard
           eyebrow="Speed"
           title="Built for efficiency"
           description="Streamlined workflows and intelligent automation help your team process more data in less time."
@@ -108,20 +122,6 @@ function BentoSection() {
               <Keyboard highlighted={["LeftCommand", "LeftShift", "D"]} />
             </div>
           }
-          className="lg:col-span-2 lg:rounded-bl-4xl"
-        />
-        <BentoCard
-          eyebrow="Integration"
-          title="Seamless data integration"
-          description="Connect with your existing geological databases and data sources for a unified exploration workflow."
-          graphic={<LogoCluster />}
-          className="lg:col-span-2"
-        />
-        <BentoCard
-          eyebrow="Limitless"
-          title="Global insights"
-          description="Explore opportunities across different regions with our worldwide geological database coverage."
-          graphic={<Map />}
           className="max-lg:rounded-b-4xl lg:col-span-2 lg:rounded-br-4xl"
         />
       </div>
