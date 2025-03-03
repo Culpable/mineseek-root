@@ -40,7 +40,11 @@ export function LogoTimeline() {
           }}
         />
         <div className="relative flex size-24 items-center justify-center rounded-xl bg-gradient-to-t from-white/5 to-white/25 shadow outline outline-offset-[-5px] outline-white/5 ring-1 ring-inset ring-white/10">
-          <Mark className="h-9 fill-white" />
+          {/* Original code commented out */}
+          {/* <Mark className="h-9 fill-white" /> */}
+          
+          {/* Using the actual Mine Seek logo */}
+          <Mark className="h-16 w-auto" />
         </div>
       </div>
       <div className="absolute inset-0 grid grid-cols-1 pt-8 [container-type:inline-size]">
