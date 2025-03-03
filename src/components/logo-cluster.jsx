@@ -51,9 +51,9 @@ function MainLogo() {
   )
 }
 
-function Logo({ src, left, top, hover }) {
+function Logo({ src, left, top, hover, size = 14 }) {
   return (
-    <motion.img
+    <motion.div
       variants={{
         idle: { x: 0, y: 0, rotate: 0 },
         active: {
@@ -69,11 +69,18 @@ function Logo({ src, left, top, hover }) {
           },
         },
       }}
-      alt=""
-      src={src}
       style={{ left, top }}
-      className="absolute size-16 rounded-full bg-white shadow ring-1 ring-black/5"
-    />
+      className="absolute size-16 flex items-center justify-center rounded-full bg-white shadow ring-1 ring-black/5"
+    >
+      <img 
+        src={src} 
+        alt="" 
+        className={clsx(
+          `size-${size}`,
+          'object-contain'
+        )}
+      />
+    </motion.div>
   )
 }
 
@@ -84,40 +91,52 @@ export function LogoCluster() {
       <div className="absolute left-1/2 h-full w-[26rem] -translate-x-1/2">
         <MainLogo />
         <Logo
-          src="/logo-cluster/career-builder.svg"
+          // src="/logo-cluster/career-builder.svg"
+          src="/logo-cluster/prospector.png"
           left={360}
           top={144}
           hover={{ x: 6, y: 1, rotate: 5, delay: 0.38 }}
+          size={12}
         />
         <Logo
-          src="/logo-cluster/dribbble.svg"
+          // src="/logo-cluster/dribbble.svg"
+          src="/logo-cluster/osdu.png"
           left={285}
           top={20}
           hover={{ x: 4, y: -5, rotate: 6, delay: 0.3 }}
+          size={12}
         />
         <Logo
-          src="/logo-cluster/glassdoor.svg"
+          // src="/logo-cluster/glassdoor.svg"
+          src="/logo-cluster/arcgis.png"
           left={255}
           top={210}
           hover={{ x: 3, y: 5, rotate: 7, delay: 0.2 }}
+          size={12}
         />
         <Logo
-          src="/logo-cluster/linkedin.svg"
+          // src="/logo-cluster/linkedin.sv 
+          src="/logo-cluster/wamex.png"
           left={144}
           top={40}
           hover={{ x: -2, y: -5, rotate: -6, delay: 0.15 }}
+          size={12}
         />
         <Logo
-          src="/logo-cluster/upwork.svg"
+          // src="/logo-cluster/upwork.svg"
+          src="/logo-cluster/lithodat.png"
           left={36}
           top={56}
           hover={{ x: -4, y: -5, rotate: -6, delay: 0.35 }}
+          size={12}
         />
         <Logo
-          src="/logo-cluster/we-work-remotely.svg"
+          // src="/logo-cluster/we-work-remotely.svg"
+          src="/logo-cluster/leapfrog.png"
           left={96}
           top={176}
           hover={{ x: -3, y: 5, rotate: 3, delay: 0.15 }}
+          size={12}
         />
       </div>
     </div>

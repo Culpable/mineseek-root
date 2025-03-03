@@ -111,9 +111,9 @@ function BentoSection() {
           className="lg:col-span-2 lg:rounded-bl-4xl"
         />
         <BentoCard
-          eyebrow="Source"
-          title="Comprehensive coverage"
-          description="Access and analyse data from multiple geological surveys, research papers, and historical reports in one place."
+          eyebrow="Integration"
+          title="Seamless data integration"
+          description="Connect with your existing geological databases and data sources for a unified exploration workflow."
           graphic={<LogoCluster />}
           className="lg:col-span-2"
         />
