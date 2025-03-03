@@ -396,7 +396,7 @@ function Testimonial() {
                 <p className="text-sm/6 font-medium text-white">Stephanie</p>
                 <p className="text-sm/6 font-medium">
                   <span className="bg-gradient-to-r from-[#fff1be] from-[28%] via-[#ee87cb] via-[70%] to-[#b060ff] bg-clip-text text-transparent">
-                    Mining Exploration Lead
+                    Exploration Manager
                   </span>
                 </p>
               </figcaption>

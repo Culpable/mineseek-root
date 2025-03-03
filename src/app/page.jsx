@@ -77,9 +77,11 @@ function BentoSection() {
       <Heading as="h3" className="mt-2 max-w-3xl">
         Simple, intuitive, fast.
       </Heading>
-
-      <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
-        <BentoCard
+      {/* TO DO: When adding back the old cards, return to the grid-rows-2 to the div below and remove the  top left/right rounded corners from bottom cards. */}
+      {/* <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2"> */}
+      <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6">
+        {/*! Temporary comment out the top two cards for now. Need to edit the design to fit the new cards. */}
+        {/* <BentoCard
           eyebrow="Insight"
           title="Perfect clarity from complex data"
           description="Mine Seek's AI agents process vast amounts of geological data to surface key insights. Understand mineral deposits, structural patterns, and exploration opportunities with unprecedented clarity."
@@ -98,20 +100,20 @@ function BentoSection() {
           }
           fade={["bottom"]}
           className="lg:col-span-3 lg:rounded-tr-4xl"
-        />
+        /> */}
         <BentoCard
           eyebrow="Integration"
           title="Seamless data integration"
           description="Connect with your existing geological databases and data sources for a unified exploration workflow."
           graphic={<LogoCluster />}
-          className="lg:col-span-2 lg:rounded-bl-4xl rounded-bl-4xl"
+          className="lg:col-span-2 lg:rounded-bl-4xl rounded-bl-4xl max-lg:rounded-t-4xl lg:rounded-tl-4xl max-lg:rounded-br-4xl"
         />
         <BentoCard
           eyebrow="Limitless"
           title="Global insights"
           description="Explore opportunities across different regions with our worldwide geological database coverage."
           graphic={<Map />}
-          className="lg:col-span-2"
+          className="lg:col-span-2 max-lg:rounded-4xl"
         />
         <BentoCard
           eyebrow="Speed"
@@ -122,7 +124,7 @@ function BentoSection() {
               <Keyboard highlighted={["LeftCommand", "LeftShift", "D"]} />
             </div>
           }
-          className="max-lg:rounded-b-4xl lg:col-span-2 lg:rounded-br-4xl"
+          className="max-lg:rounded-b-4xl lg:col-span-2 lg:rounded-br-4xl lg:rounded-tr-4xl max-lg:rounded-t-4xl"
         />
       </div>
     </Container>
