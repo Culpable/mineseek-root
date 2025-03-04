@@ -7,7 +7,7 @@ import { siteImages } from './images'
 export const siteMetadata = {
   title: 'Mine Seek - AI-Powered Mining Exploration',
   description: 'Mine Seek accelerates your path from data to discovery with AI-powered exploration agents. Custom made for Australian mining exploration teams.',
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://mineseek.com',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://mineseek.com.au',
   // Using the absolute URL directly from siteImages
   ogImage: siteImages.featured,
   twitter: {

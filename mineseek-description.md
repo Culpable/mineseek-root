@@ -1,4 +1,4 @@
-# Mine Seek: An AI-Powered Platform for Mining Exploration
+# Mine Seek: An AI-Powered Platform for Mining Exploration (mineseek.com.au)
 
 Mine Seek helps mining exploration teams rapidly analyse and interpret large volumes of unstructured geological data. By leveraging advanced AI—including natural language processing, machine learning, geoscience-specific computer vision, and agentic workflows—Mine Seek saves time, reduces errors, and enhances decision-making.
 
