@@ -177,9 +177,9 @@ function DarkBentoSection() {
           />
           <BentoCard
             dark
-            eyebrow="Integrations"
-            title="Seamless data integration"
-            description="Connect with your existing geological databases and tools for a unified exploration workflow."
+            eyebrow="Cross-Platform"
+            title="Unified exploration interface"
+            description="Eliminate data silos by integrating fragmented exploration data into a cohesive exploration hub."
             graphic={<LogoTimeline />}
             className="z-10 !overflow-visible lg:col-span-2 lg:rounded-tr-4xl"
           />

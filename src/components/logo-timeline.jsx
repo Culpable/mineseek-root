@@ -21,7 +21,7 @@ function Logo({ label, src, className }) {
         '[--move-x-from:-100%] [--move-x-to:calc(100%+100cqw)] [animation-iteration-count:infinite] [animation-name:move-x] [animation-play-state:paused] [animation-timing-function:linear] group-hover:[animation-play-state:running]',
       )}
     >
-      <img alt="" src={src} className="size-4" />
+      <img alt="" src={src} className="size-4 object-contain" />
       <span className="text-sm/6 font-medium text-white">{label}</span>
     </div>
   )
@@ -49,54 +49,111 @@ export function LogoTimeline() {
       </div>
       <div className="absolute inset-0 grid grid-cols-1 pt-8 [container-type:inline-size]">
         <Row>
-          <Logo
+          {/* Original logos commented out */}
+          {/* <Logo
             label="Loom"
             src="/logo-timeline/loom.svg"
             className="[animation-delay:-26s] [animation-duration:30s]"
-          />
+          /> */}
           <Logo
+            label="Prospector"
+            src="/logo-cluster/prospector.png"
+            className="[animation-delay:-26s] [animation-duration:30s]"
+          />
+          {/* <Logo
             label="Gmail"
             src="/logo-timeline/gmail.svg"
+            className="[animation-delay:-8s] [animation-duration:30s]"
+          /> */}
+          <Logo
+            label="WAMEX"
+            src="/logo-cluster/wamex-white.png"
             className="[animation-delay:-8s] [animation-duration:30s]"
           />
         </Row>
         <Row>
-          <Logo
+          {/* <Logo
             label="Asana"
             src="/logo-timeline/asana.svg"
             className="[animation-delay:-40s] [animation-duration:40s]"
-          />
+          /> */}
           <Logo
+            label="ArcGIS"
+            src="/logo-cluster/arcgis.png"
+            className="[animation-delay:-40s] [animation-duration:40s]"
+          />
+          {/* <Logo
             label="Microsoft Teams"
             src="/logo-timeline/microsoft-teams.svg"
+            className="[animation-delay:-20s] [animation-duration:40s]"
+          /> */}
+          <Logo
+            label="Lithodat"
+            src="/logo-cluster/lithodat.png"
             className="[animation-delay:-20s] [animation-duration:40s]"
           />
         </Row>
         <Row>
-          <Logo
+          {/* <Logo
             label="Google Calendar"
             src="/logo-timeline/google-calendar.svg"
             className="[animation-delay:-10s] [animation-duration:40s]"
-          />
+          /> */}
           <Logo
+            label="OSDU"
+            src="/logo-cluster/osdu.png"
+            className="[animation-delay:-10s] [animation-duration:40s]"
+          />
+          {/* <Logo
             label="Google Drive"
             src="/logo-timeline/google-drive.svg"
+            className="[animation-delay:-32s] [animation-duration:40s]"
+          /> */}
+          <Logo
+            label="Leapfrog"
+            src="/logo-cluster/leapfrog.png"
             className="[animation-delay:-32s] [animation-duration:40s]"
           />
         </Row>
         <Row>
           <Logo
+            label="OneGeology"
+            src="/logo-cluster/one-geology.png"
+            className="[animation-delay:-45s] [animation-duration:45s]"
+          />
+
+          <Logo
+            label="Scopus"
+            src="/logo-cluster/elsevier.svg"
+            className="[animation-delay:-23s] [animation-duration:45s]"
+          />
+        </Row>
+        {/* <Row>
+          <Logo
             label="Basecamp"
             src="/logo-timeline/basecamp.svg"
             className="[animation-delay:-45s] [animation-duration:45s]"
           />
+
           <Logo
             label="Discord"
             src="/logo-timeline/discord.svg"
             className="[animation-delay:-23s] [animation-duration:45s]"
           />
-        </Row>
+        </Row>*/}
         <Row>
+          <Logo
+            label="Wikidata"
+            src="/logo-cluster/wikidata.png"
+            className="[animation-delay:-55s] [animation-duration:60s]"
+          />
+          <Logo
+            label="OpenTopography"
+            src="/logo-cluster/opentopography.png"
+            className="[animation-delay:-20s] [animation-duration:60s]"
+          />
+        </Row>
+        {/* <Row>
           <Logo
             label="Hubspot"
             src="/logo-timeline/hubspot.svg"
@@ -119,7 +176,7 @@ export function LogoTimeline() {
             src="/logo-timeline/zoom.svg"
             className="[animation-delay:-28s] [animation-duration:40s]"
           />
-        </Row>
+        </Row> */}
       </div>
     </div>
   )
