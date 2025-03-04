@@ -15,10 +15,32 @@ import { Screenshot } from '@/components/screenshot'
 import { Testimonials } from '@/components/testimonials'
 import { Heading, Subheading } from '@/components/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
+import Script from 'next/script'
+import { organizationSchema } from '@/schemas/organization-schema'
+import { siteMetadata } from '@/lib/metadata'
 
 export const metadata = {
   description:
     "Mine Seek accelerates your path from data to discovery with AI-powered exploration agents. Custom made for Australian mining exploration teams.",
+  openGraph: {
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+    images: [
+      {
+        url: siteMetadata.ogImage,
+        width: 1200,
+        height: 630,
+        alt: 'Mine Seek: AI-Powered Mining Exploration',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: siteMetadata.twitter.cardType,
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+    images: [siteMetadata.ogImage],
+  },
 }
 
 function Hero() {
@@ -189,6 +211,13 @@ function DarkBentoSection() {
 export default function Home() {
   return (
     <div className="overflow-hidden">
+      <Script
+        id="organization-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema)
+        }}
+      />
       <Hero />
       <main>
         {/* Commented out logo cloud for now */}
