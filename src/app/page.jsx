@@ -93,7 +93,7 @@ function FeatureSection() {
         </p> */}
         {/* Version 2 */}
         <p className="mt-8 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
-          Unify all your exploration data into a single intuitive interface powered by Mine Seek’s AI agents. Seamlessly integrate with WAMEX, SARIG, ArcGIS, and any custom information sources your team relies on, creating one cohesive exploration platform.
+          Unify all your exploration data into a single intuitive interface powered by Mine Seek’s AI agents. Seamlessly integrate with WAMEX, SARIG, ArcGIS, and any custom data sources your team relies on, creating one cohesive exploration platform.
         </p>
       </Container>
     </div>
