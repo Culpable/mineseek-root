@@ -12,13 +12,14 @@ function CallToAction() {
       <hgroup>
         <Subheading>Get started</Subheading>
         <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
-          Ready to dive in?
+          Ready to experience the future of exploration?
+          <br />
           <br />
           Book a demo today.
         </p>
       </hgroup>
       <p className="mx-auto mt-6 max-w-xs text-sm/6 text-gray-500">
-        Unlock the power of AI to accelerate your mining exploration.
+        Harness the power of AI to accelerate your mining exploration.
       </p>
       <div className="mt-6">
         <Button className="w-full sm:w-auto" href="#">
@@ -177,11 +178,12 @@ export function Footer() {
                   <Copyright />
                 </PlusGridItem>
               </div>
-              <div className="flex">
+              {/* Remove social links for now. */}
+              {/* <div className="flex">
                 <PlusGridItem className="flex items-center gap-8 py-3" isFooterItem={true}>
                   <SocialLinks />
                 </PlusGridItem>
-              </div>
+              </div> */}
             </PlusGridRow>
           </PlusGrid>
         </Container>

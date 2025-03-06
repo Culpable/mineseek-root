@@ -236,7 +236,8 @@ export default function Home() {
         </div>
         <DarkBentoSection />
       </main>
-      <Testimonials />
+      {/* Commented out testimonials for now. */}
+      {/* <Testimonials /> */}
       <Footer />
     </div>
   )
