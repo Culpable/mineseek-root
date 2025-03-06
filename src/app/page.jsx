@@ -78,15 +78,23 @@ function FeatureSection() {
   return (
     <div className="overflow-hidden">
       <Container className="pb-24">
-        <Heading as="h2" className="max-w-3xl">
+        <Heading as="h2" className="max-w-5xl">
           Exploration insights at your fingertips.
         </Heading>
-        <Screenshot
+        {/* <Screenshot
           width={1216}
           height={768}
           src="/screenshots/app.png"
           className="mt-16 h-[36rem] sm:h-auto sm:w-[76rem]"
-        />
+        /> */}
+        {/* Version 1 */}
+        {/* <p className="mt-8 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
+          Unify all your exploration data into a single cohesive platform. Mine Seek’s AI agents seamlessly integrate with WAMEX, OSDU, and any custom information sources your team depends on, bringing everything together into one intuitive interface.
+        </p> */}
+        {/* Version 2 */}
+        <p className="mt-8 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
+          Unify all your exploration data into a single intuitive interface powered by Mine Seek’s AI agents. Seamlessly integrate with WAMEX, OSDU, and any custom information sources your team relies on, creating one cohesive exploration platform.
+        </p>
       </Container>
     </div>
   )
