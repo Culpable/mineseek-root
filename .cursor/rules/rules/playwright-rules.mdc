@@ -1,0 +1,64 @@
+---
+description: Use these for ALL queries related to playwright. You MUST use these rules when using playwrite.
+globs: 
+---
+<playwright_rules>
+- ALWAYS ASSUME the app is already running on localhost:8000.
+- The app home page is on localhost:8000 unless specified otherwise.
+- ONLY run the server via `flask run -p 8000` if you take a screenshot and nothing is there.
+
+When running the app:
+- Always use newSession: true when navigating to the app for the first time.
+
+<api_docs>
+playwright_navigate:
+  Description: Navigate to any URL in the browser
+  Parameters:
+    - url (string): URL of the application under test
+
+playwright_screenshot:
+  Description: Capture screenshots of the entire page or specific elements
+  Parameters:
+    - name (string, required): Name for the screenshot
+    - selector (string, optional): CSS selector for the element to screenshot
+    - width (number, optional, default: 800): Screenshot width
+    - height (number, optional, default: 600): Screenshot height
+
+playwright_click:
+  Description: Click elements on the page
+  Parameters:
+    - selector (string): CSS selector for the element to click
+
+playwright_hover:
+  Description: Hover over elements on the page
+  Parameters:
+    - selector (string): CSS selector for the element to hover
+
+playwright_fill:
+  Description: Fill out input fields
+  Parameters:
+    - selector (string): CSS selector for the input field
+    - value (string): Value to fill
+
+playwright_select:
+  Description: Select an element with the SELECT tag
+  Parameters:
+    - selector (string): CSS selector for the element to select
+    - value (string): Value to select
+
+playwright_evaluate:
+  Description: Execute JavaScript in the browser console
+  Parameters:
+    - script (string): JavaScript code to execute
+</api_docs>
+
+<error_handling>
+<error_message>
+Navigation failed: page.goto: Target page, context or browser has been closed
+</error_message>
+<error_solution>
+- Run `pkill -f chromium` to kill the browser process.
+- Nagivate to the page again.
+</error_solution>
+</error_handling>
+</playwright_rules>
