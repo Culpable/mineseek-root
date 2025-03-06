@@ -163,17 +163,22 @@ function DarkBentoSection() {
           Your AI-powered advantage.
         </Heading>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6">
+          {/* lg:grid-rows-2 temporarily removed to eliminate extra spacing. Two bottom cards (Collaboration and Reporting) are temporarily hidden. */}
           <BentoCard
             dark
-            eyebrow="AI Analysis"
-            title="Real-time geological insights"
-            description="Our AI agents continuously analyse new data and surface relevant insights, ensuring you're always informed of new opportunities."
+            eyebrow="Discovery Accelerator"
+            title="Your AI Exploration Assistant"
+            description="Mine Seek's AI agents decode your complex exploration data into actionable insights, accelerating decision-making for exploration teams and reducing time to discovery."
             graphic={
-              <div className="h-80 bg-[url(/screenshots/networking.png)] bg-[size:851px_344px] bg-no-repeat" />
+              // Original
+              // <div className="h-80 bg-[url(/screenshots/chat.png)] bg-[size:851px_344px] bg-no-repeat" />
+              <div className="h-80 bg-[url(/screenshots/chat.png)] bg-cover bg-no-repeat" />
             }
             fade={["top"]}
-            className="max-lg:rounded-t-4xl lg:col-span-4 lg:rounded-tl-4xl"
+            fadeIntensity={0.3} // Reduce to 30% intensity
+            // className="z-10 !overflow-visible lg:col-span-2 lg:rounded-tr-4xl" //! Bring this back when the two bottom cards are added back.
+            className="max-lg:rounded-t-4xl lg:col-span-4 lg:rounded-tl-4xl lg:rounded-bl-4xl max-lg:rounded-b-4xl"
           />
           <BentoCard
             dark
@@ -181,9 +186,10 @@ function DarkBentoSection() {
             title="Unified exploration interface"
             description="Eliminate data silos by integrating fragmented exploration data into a cohesive exploration hub."
             graphic={<LogoTimeline />}
-            className="z-10 !overflow-visible lg:col-span-2 lg:rounded-tr-4xl"
+            // className="z-10 !overflow-visible lg:col-span-2 lg:rounded-tr-4xl" //! Bring this back when the two bottom cards are added back.
+            className="z-10 !overflow-visible lg:col-span-2 lg:rounded-tr-4xl lg:rounded-br-4xl max-lg:rounded-t-4xl max-lg:rounded-b-4xl"
           />
-          <BentoCard
+          {/* <BentoCard
             dark
             eyebrow="Collaboration"
             title="Team collaboration"
@@ -201,7 +207,7 @@ function DarkBentoSection() {
             }
             fade={["top"]}
             className="max-lg:rounded-b-4xl lg:col-span-4 lg:rounded-br-4xl"
-          />
+          /> */}
         </div>
       </Container>
     </div>
