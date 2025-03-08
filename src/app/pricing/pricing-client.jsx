@@ -123,8 +123,7 @@ function Header() {
     <Container className="mt-16">
       <Heading as="h1">Pricing plans for teams of all sizes</Heading>
       <Lead className="mt-6 max-w-3xl">
-        Mining companies across Australia use Mine Seek to accelerate their exploration programmes.
-        Book a demo today.
+        Mining companies across Australia use Mine Seek to accelerate their exploration. Custom plans to suit your needs.
       </Lead>
     </Container>
   )

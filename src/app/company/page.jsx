@@ -16,7 +16,7 @@ function Header() {
   return (
     <Container className="mt-16">
       <Subheading>Our Company</Subheading>
-      <Heading as="h1">Transforming mining exploration with AI.</Heading>
+      <Heading as="h1">Transforming mining exploration with AI</Heading>
       <Lead className="mt-6 max-w-3xl">
         We're on a mission to revolutionise how mining exploration teams discover, analyse, and interpret geological data through advanced AI and intelligent workflows.
       </Lead>
@@ -27,7 +27,7 @@ function Header() {
             At Mine Seek, we are dedicated to transforming the mining exploration industry through cutting-edge AI technology. Our mission is to help exploration teams rapidly analyse and interpret large volumes of unstructured geological data, saving time and reducing errors in the process.
           </p>
           <p className="mt-8 text-base text-neutral-600">
-            We're customer-obsessed—putting in the time to understand the complex challenges faced by mining exploration professionals. Through our advanced AI capabilities, including natural language processing, machine learning, and geoscience-specific computer vision, we're helping teams make more informed decisions and discover valuable opportunities faster than ever before.
+            We’re customer-obsessed—putting in the time to understand the complex challenges faced by mining exploration professionals. Through our advanced AI capabilities, including natural language processing, machine learning, and geoscience-specific computer vision, we're helping teams make more informed decisions and discover valuable opportunities faster than ever before.
           </p>
         </div>
         <div className="pt-20 lg:row-span-2 lg:-mr-16 xl:mr-auto">

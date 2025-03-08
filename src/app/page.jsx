@@ -63,7 +63,7 @@ function Hero() {
             Mine Seek accelerates your path from data to discovery with AI-powered exploration agents.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="/contact">Get started</Button>
+            <Button href="/contact">Book a Demo</Button>
             <Button variant="secondary" href="/pricing">
               See pricing
             </Button>
