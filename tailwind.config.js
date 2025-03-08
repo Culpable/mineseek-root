@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: 'Switzer, system-ui, sans-serif',
+        sans: ['var(--font-switzer)', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         '4xl': '2rem',

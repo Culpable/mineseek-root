@@ -1,4 +1,75 @@
 import '@/styles/tailwind.css'
+import localFont from 'next/font/local'
+
+// Load Switzer font files locally for optimal performance
+const switzer = localFont({
+  src: [
+    {
+      path: '../fonts/Switzer-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Switzer-Regular.woff',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Switzer-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Switzer-MediumItalic.woff2',
+      weight: '500',
+      style: 'italic',
+    },
+    {
+      path: '../fonts/Switzer-MediumItalic.woff',
+      weight: '500',
+      style: 'italic',
+    },
+    {
+      path: '../fonts/Switzer-MediumItalic.ttf',
+      weight: '500',
+      style: 'italic',
+    },
+    {
+      path: '../fonts/Switzer-Semibold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Switzer-Semibold.woff',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Switzer-Semibold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Switzer-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Switzer-Bold.woff',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Switzer-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  display: 'swap', // Use 'swap' to prevent render blocking
+  variable: '--font-switzer', // CSS variable for the font
+  preload: true,
+  fallback: ['system-ui', 'sans-serif'], // System fallback fonts
+})
 
 export const metadata = {
   title: {
@@ -41,13 +112,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://api.fontshare.com/css?f%5B%5D=switzer@400,500,600,700&amp;display=swap"
-        />
-      </head>
+    <html lang="en" className={switzer.variable}>
       <body className="text-gray-950 antialiased">{children}</body>
     </html>
   )
