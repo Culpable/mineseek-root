@@ -156,7 +156,7 @@ export function ContactForm() {
         )}
 
         {submitStatus.success && (
-          <div className="mt-4 text-green-500">Message sent successfully. We'll get back to you soon to discuss how we can accelerate your exploration process.</div>
+          <div className="mt-4 text-green-500">Message sent successfully. We’ll get back to you soon.</div>
         )}
 
         <Button 
