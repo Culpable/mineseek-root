@@ -33,7 +33,7 @@ export default function Contact() {
       
       <div className="my-32"></div>
       
-      <Footer />
+      <Footer noCta={true} />
     </main>
   )
 } 

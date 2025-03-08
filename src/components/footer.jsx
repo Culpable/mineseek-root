@@ -152,14 +152,14 @@ function Copyright() {
   )
 }
 
-export function Footer() {
+export function Footer({ noCta = false }) {
   return (
     <footer>
       <Gradient className="relative">
         <div className="absolute inset-2 rounded-4xl bg-white/80" />
         <Container>
-          <CallToAction />
-          <PlusGrid className="pb-16">
+          {!noCta && <CallToAction />}
+          <PlusGrid className={`pb-16 ${noCta ? 'pt-24' : ''}`}>
             <PlusGridRow>
               <div className="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-8">
                 <div className="col-span-2 flex">
