@@ -18,10 +18,10 @@ function CallToAction() {
           Book a demo today.
         </p>
       </hgroup>
-      <p className="mx-auto mt-6 max-w-xs text-sm/6 text-gray-500">
+      <p className="mx-auto mt-10 max-w-md text-lg font-medium text-gray-700 sm:text-xl">
         Harness the power of AI to accelerate your mining exploration.
       </p>
-      <div className="mt-6">
+      <div className="mt-8">
         <Button className="w-full sm:w-auto" href="#">
           Get started
         </Button>
