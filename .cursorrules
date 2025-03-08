@@ -5,7 +5,7 @@ These rules apply specifically to the Mine Seek template repository and should b
 </description>
 
 <content_rules>
-- All text must be in British English
+- All text MUST be in British English
 - Use ’ instead of ' as an apostrophe on any frontend words (words that display to the user). e.g. Let’s, not Let's
 - All marketing copy is embedded directly in JSX files
 </content_rules>

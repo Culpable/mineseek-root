@@ -25,7 +25,7 @@ const tiers = [
     description: 'Get started with AI-powered geological insights.',
     priceMonthly: 899,
     currency: 'AUD',
-    href: '#',
+    href: '/contact',
     highlights: [
       //   { description: 'Up to 5 team members' },
       { description: 'Process up to 500 documents monthly' },
@@ -56,7 +56,7 @@ const tiers = [
     description: 'Accelerate discoveries with advanced AI tools.',
     priceMonthly: 1799,
     currency: 'AUD',
-    href: '#',
+    href: '/contact',
     highlights: [
       //   { description: 'Up to 15 team members' },
       { description: 'Process up to 5,000 documents monthly' },
@@ -88,7 +88,7 @@ const tiers = [
     priceMonthly: null,
     priceLabel: 'Custom',
     currency: 'AUD',
-    href: '#',
+    href: '/contact',
     highlights: [
       //   { description: 'Unlimited team members' },
       { description: 'Unlimited document processing' },
@@ -171,7 +171,7 @@ function PricingCard({ tier }) {
             )}
           </div>
           <div className="mt-8">
-            <Button href={tier.href}>Get Started</Button>
+            <Button href={tier.href}>Book a Demo</Button>
           </div>
           <div className="mt-8">
             <h3 className="text-sm/6 font-medium text-gray-950">
@@ -254,13 +254,13 @@ function PricingTable({ selectedTier }) {
             </td>
             <td colSpan={3} className="p-0 text-right">
               <Button variant="outline" href={selectedTier.href}>
-                Get started
+                Book a Demo
               </Button>
             </td>
           </tr>
           <tr className="max-sm:hidden">
             <th className="p-0" scope="row">
-              <span className="sr-only">Get started</span>
+              <span className="sr-only">Book a Demo</span>
             </th>
             {tiers.map((tier) => (
               <td
@@ -269,7 +269,7 @@ function PricingTable({ selectedTier }) {
                 className="px-0 pb-0 pt-4 data-[selected]:table-cell max-sm:hidden"
               >
                 <Button variant="outline" href={tier.href}>
-                  Get started
+                  Book a Demo
                 </Button>
               </td>
             ))}

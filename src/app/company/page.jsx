@@ -9,24 +9,25 @@ import { Heading, Lead, Subheading } from '@/components/text'
 export const metadata = {
   title: 'Company',
   description:
-    'We’re on a mission to transform mining exploration by harnessing the power of AI and advanced data analysis.',
+    "We're on a mission to transform mining exploration by harnessing the power of AI and advanced data analysis.",
 }
 
 function Header() {
   return (
     <Container className="mt-16">
+      <Subheading>Our Company</Subheading>
       <Heading as="h1">Transforming mining exploration with AI.</Heading>
       <Lead className="mt-6 max-w-3xl">
-        We’re on a mission to revolutionise how mining exploration teams discover, analyse, and interpret geological data through advanced AI and intelligent workflows.
+        We're on a mission to revolutionise how mining exploration teams discover, analyse, and interpret geological data through advanced AI and intelligent workflows.
       </Lead>
       <section className="mt-16 grid grid-cols-1 lg:grid-cols-2 lg:gap-12">
         <div className="max-w-lg">
           <h2 className="text-2xl font-medium tracking-tight">Our mission</h2>
-          <p className="mt-6 text-sm/6 text-gray-600">
+          <p className="mt-6 text-base text-neutral-600">
             At Mine Seek, we are dedicated to transforming the mining exploration industry through cutting-edge AI technology. Our mission is to help exploration teams rapidly analyse and interpret large volumes of unstructured geological data, saving time and reducing errors in the process.
           </p>
-          <p className="mt-8 text-sm/6 text-gray-600">
-            We’re customer-obsessed—putting in the time to understand the complex challenges faced by mining exploration professionals. Through our advanced AI capabilities, including natural language processing, machine learning, and geoscience-specific computer vision, we’re helping teams make more informed decisions and discover valuable opportunities faster than ever before.
+          <p className="mt-8 text-base text-neutral-600">
+            We're customer-obsessed—putting in the time to understand the complex challenges faced by mining exploration professionals. Through our advanced AI capabilities, including natural language processing, machine learning, and geoscience-specific computer vision, we're helping teams make more informed decisions and discover valuable opportunities faster than ever before.
           </p>
         </div>
         <div className="pt-20 lg:row-span-2 lg:-mr-16 xl:mr-auto">
@@ -66,25 +67,25 @@ function Header() {
           <hr className="mt-6 border-t border-gray-200" />
           <dl className="mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
-              <dt className="text-sm/6 text-gray-600">Analysis Speed</dt>
+              <dt className="text-base text-neutral-600">Analysis Speed</dt>
               <dd className="order-first text-6xl font-medium tracking-tight">
                 <AnimatedNumber start={1} end={10} />x
               </dd>
             </div>
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
-              <dt className="text-sm/6 text-gray-600">Documents Processed</dt>
+              <dt className="text-base text-neutral-600">Documents Processed</dt>
               <dd className="order-first text-6xl font-medium tracking-tight">
                 <AnimatedNumber start={10} end={80} />K
               </dd>
             </div>
             <div className="flex flex-col gap-y-2 max-sm:border-b max-sm:border-dotted max-sm:border-gray-200 max-sm:pb-4">
-              <dt className="text-sm/6 text-gray-600">Mining Sites Analysed</dt>
+              <dt className="text-base text-neutral-600">Mining Sites Analysed</dt>
               <dd className="order-first text-6xl font-medium tracking-tight">
                 <AnimatedNumber start={0} end={5} />K
               </dd>
             </div>
             <div className="flex flex-col gap-y-2">
-              <dt className="text-sm/6 text-gray-600">Insights Generated</dt>
+              <dt className="text-base text-neutral-600">Insights Generated</dt>
               <dd className="order-first text-6xl font-medium tracking-tight">
                 <AnimatedNumber start={0} end={1.2} decimals={1} />M
               </dd>
@@ -100,9 +101,9 @@ function Person({ name, description, img }) {
   return (
     <li className="flex items-center gap-4">
       <img alt="" src={img} className="size-12 rounded-full" />
-      <div className="text-sm/6">
+      <div className="text-base">
         <h3 className="font-medium">{name}</h3>
-        <p className="text-gray-500">{description}</p>
+        <p className="text-neutral-600">{description}</p>
       </div>
     </li>
   )
@@ -120,10 +121,10 @@ function Team() {
       </Lead>
       <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
         <div className="max-w-lg">
-          <p className="text-sm/6 text-gray-600">
-            Our journey began when a team of AI researchers and experienced geologists recognised a critical gap in the mining exploration industry: the need for intelligent automation in processing vast amounts of geological data. What started as a research project has evolved into Mine Seek, a comprehensive platform that’s revolutionising how exploration teams work.
+          <p className="text-base text-neutral-600">
+            Our journey began when a team of AI researchers and experienced geologists recognised a critical gap in the mining exploration industry: the need for intelligent automation in processing vast amounts of geological data. What started as a research project has evolved into Mine Seek, a comprehensive platform that's revolutionising how exploration teams work.
           </p>
-          <p className="mt-8 text-sm/6 text-gray-600">
+          <p className="mt-8 text-base text-neutral-600">
             Today, Mine Seek transforms mining exploration by combining advanced AI technologies with deep domain expertise. Our platform helps mining exploration professionals across Australia to rapidly analyse geological data, identify promising opportunities, and make more informed decisions through our integrated, intelligent platform.
           </p>
           {/* <div className="mt-6">
@@ -224,14 +225,14 @@ function Investors() {
             src="/investors/remington-schwartz.svg"
             className="h-14"
           />
-          <p className="mt-6 max-w-lg text-sm/6 text-gray-500">
+          <p className="mt-6 max-w-lg text-base text-neutral-600">
             Remington Schwartz has been a driving force in the mining technology sector, backing innovative companies that leverage AI and machine learning to transform traditional industries. Their deep expertise in both technology and natural resources provides their portfolio companies with valuable industry insights and connections.
           </p>
         </li>
         <li>
           <img alt="Deccel" src="/investors/deccel.svg" className="h-14" />
-          <p className="mt-6 max-w-lg text-sm/6 text-gray-500">
-            Deccel has been at the forefront of innovation in the mining sector, investing in pioneering companies across various aspects of the industry. Their commitment to sustainable and efficient resource discovery aligns perfectly with Mine Seek’s mission to revolutionise mining exploration through advanced technology.
+          <p className="mt-6 max-w-lg text-base text-neutral-600">
+            Deccel has been at the forefront of innovation in the mining sector, investing in pioneering companies across various aspects of the industry. Their commitment to sustainable and efficient resource discovery aligns perfectly with Mine Seek's mission to revolutionise mining exploration through advanced technology.
           </p>
         </li>
       </ul>
@@ -292,8 +293,8 @@ function Testimonial() {
       />
       <figure className="relative p-10">
         <blockquote>
-          <p className="relative text-xl/7 text-white before:absolute before:-translate-x-full before:content-['“'] after:absolute after:content-['”']">
-            We’ve reduced our data analysis time by 80% and discovered opportunities we would have otherwise missed.
+          <p className="relative text-xl/7 text-white before:absolute before:-translate-x-full before:content-['\22'] after:absolute after:content-['\22']">
+            We've reduced our data analysis time by 80% and discovered opportunities we would have otherwise missed.
           </p>
         </blockquote>
         <figcaption className="mt-6 border-t border-white/20 pt-6">
@@ -317,7 +318,7 @@ function Careers() {
         Join our innovative team.
       </Heading>
       <Lead className="mt-6 max-w-3xl">
-        We’re building the future of mining exploration with a global team of experts in AI, machine learning, and geoscience.
+        We're building the future of mining exploration with a global team of experts in AI, machine learning, and geoscience.
       </Lead>
       <div className="mt-24 grid grid-cols-1 gap-16 lg:grid-cols-[1fr_24rem]">
         <div className="lg:max-w-2xl">

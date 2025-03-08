@@ -14,6 +14,7 @@ import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 const links = [
   { href: '/pricing', label: 'Pricing' },
   { href: '/company', label: 'Company' },
+  { href: '/contact', label: 'Contact' },
   { href: 'https://app.mineseek.com.au/', label: 'Login' },
 ]
 

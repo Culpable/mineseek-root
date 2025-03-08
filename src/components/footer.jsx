@@ -10,20 +10,20 @@ function CallToAction() {
   return (
     <div className="relative pb-16 pt-20 text-center sm:py-24">
       <hgroup>
-        <Subheading>Get started</Subheading>
+        <Subheading>Book a Demo</Subheading>
         <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
           Ready to experience the future of exploration?
+          {/* <br />
           <br />
-          <br />
-          Book a demo today.
+          Book a demo today. */}
         </p>
       </hgroup>
       <p className="mx-auto mt-10 max-w-md text-lg font-medium text-gray-700 sm:text-xl">
         Harness the power of AI to accelerate your mining exploration.
       </p>
       <div className="mt-8">
-        <Button className="w-full sm:w-auto" href="#">
-          Get started
+        <Button className="w-full sm:w-auto" href="/contact">
+          Book a Demo
         </Button>
       </div>
     </div>
@@ -71,7 +71,7 @@ function Sitemap() {
         <SitemapHeading>Support</SitemapHeading>
         <SitemapLinks>
           {/* <SitemapLink href="#">Help center</SitemapLink> */}
-          <SitemapLink href="https://app.mineseek.com.au/contact">Contact</SitemapLink>
+          <SitemapLink href="/contact">Contact</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
