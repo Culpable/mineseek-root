@@ -1,9 +1,10 @@
 import mixpanel from 'mixpanel-browser';
 
-const MIXPANEL_TOKEN = process.env.NEXT_PUBLIC_MIXPANEL_TOKEN;
+// Hardcoded token instead of using environment variables
+const MIXPANEL_TOKEN = '187560cd6dae284087bd43a242bde46e';
 
 /**
- * Initialize Mixpanel with environment token and Session Replay configuration
+ * Initialize Mixpanel with hardcoded token and Session Replay configuration
  * - Session Replay records user interactions to review later
  * - track_pageview set to true for automatic page view tracking
  * - Using cookie persistence with cross-subdomain support
@@ -12,13 +13,7 @@ const MIXPANEL_TOKEN = process.env.NEXT_PUBLIC_MIXPANEL_TOKEN;
  * - Session timeouts configured for optimal recording
  */
 export const initMixpanel = () => {
-  if (!MIXPANEL_TOKEN) {
-    console.warn('Mixpanel token is missing! Check your .env.local file.');
-    return;
-  }
-
   mixpanel.init(MIXPANEL_TOKEN, {
-    debug: true,
     track_pageview: true,
     persistence: 'localStorage', // Only set this to 'cookie' if using cross-subdomain tracking
     // cross_subdomain_cookie: true,
