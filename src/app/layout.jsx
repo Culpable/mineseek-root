@@ -2,6 +2,7 @@ import '@/styles/tailwind.css'
 import localFont from 'next/font/local'
 import Script from 'next/script'
 import { googleAdsScript } from '@/scripts/google-ads'
+import MixpanelProvider from '@/components/MixpanelProvider'
 
 // Load Switzer font files locally for optimal performance
 const switzer = localFont({
@@ -128,7 +129,10 @@ export default function RootLayout({ children }) {
           __html: googleAdsScript.configScript
         }}
       />
-      <body className="text-gray-950 antialiased">{children}</body>
+      <body className="text-gray-950 antialiased">
+        <MixpanelProvider />
+        {children}
+      </body>
     </html>
   )
 }

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/button'
+import analytics from '@/lib/analytics'
 
 /**
  * Contact form component using Formspree for submission handling
@@ -20,6 +21,14 @@ export function ContactForm() {
     try {
       const formData = new FormData(event.target)
       
+      // Create tracking data object from form data with actual fields
+      const trackingData = {
+        form_source: 'contact_page',
+        has_company: !!formData.get('company'),
+        has_phone: !!formData.get('phone'),
+        email_domain: formData.get('email') ? formData.get('email').split('@')[1] : 'not_provided' // Only track domain for privacy
+      }
+      
       // Submit to Formspree
       const response = await fetch('https://formspree.io/f/mgvawpvn', {
         method: 'POST',
@@ -33,6 +42,12 @@ export function ContactForm() {
         // Form submission succeeded
         setSubmitStatus({ success: true, error: null })
         event.target.reset()
+        
+        // Track successful form submission
+        analytics.trackFormSubmission('Contact Form', {
+          ...trackingData,
+          status: 'success'
+        })
       } else {
         // Form submission failed
         const data = await response.json()
@@ -44,6 +59,12 @@ export function ContactForm() {
         error: 'Sorry, your message failed to send. Please email us directly at solutions@mineseek.com.au'
       })
       console.error('Form submission error:', error)
+      
+      // Track failed form submission
+      analytics.track('Form Error', {
+        form_name: 'Contact Form',
+        error_type: 'submission_failed'
+      })
     } finally {
       setIsSubmitting(false)
     }
@@ -156,7 +177,7 @@ export function ContactForm() {
         )}
 
         {submitStatus.success && (
-          <div className="mt-4 text-green-500">Message sent successfully. We’ll get back to you soon.</div>
+          <div className="mt-4 text-green-500">Message sent successfully. We'll get back to you soon.</div>
         )}
 
         <Button 
