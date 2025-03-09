@@ -10,6 +10,7 @@ import { motion } from 'framer-motion'
 import { Link } from './link'
 import { Logo } from './logo'
 import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
+import { Button } from './button'
 
 const links = [
   { href: '/pricing', label: 'Pricing' },
@@ -26,10 +27,10 @@ function DesktopNav() {
           {label === 'Book a Demo' ? (
             <Link
               href={href}
-              className="inline-flex items-center mx-2 text-sm font-semibold transition"
+              className="flex items-center px-2 py-3"
             >
-              <div className="rounded-full px-4 py-2.5 bg-black text-white hover:bg-gray-800 transition">
-                <span className="relative top-px">{label}</span>
+              <div className="rounded-full px-4 py-2 bg-black text-white hover:bg-gray-800 transition">
+                <span className="text-sm font-medium">{label}</span>
               </div>
             </Link>
           ) : (
@@ -73,14 +74,9 @@ function MobileNav() {
             key={href}
           >
             {label === 'Book a Demo' ? (
-              <Link 
-                href={href} 
-                className="inline-flex items-center mx-2 text-sm font-semibold transition"
-              >
-                <div className="rounded-full px-4 py-1.5 bg-black text-white hover:bg-gray-800 transition">
-                  <span className="relative top-px">{label}</span>
-                </div>
-              </Link>
+              <div className="mx-2">
+                <Button href={href}>{label}</Button>
+              </div>
             ) : (
               <Link href={href} className="text-base font-medium text-gray-950">
                 {label}

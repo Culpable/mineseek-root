@@ -24,6 +24,12 @@ export const initMixpanel = () => {
     record_idle_timeout_ms: 600000,
     record_min_ms: 3000,
   });
+  
+  // Explicitly expose mixpanel instance globally
+  window.mixpanel = mixpanel;
+  
+  // Set flag for referral tracking script
+  window.mixpanelLoaded = true;
 };
 
 /**

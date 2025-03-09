@@ -235,6 +235,11 @@ export default function Home() {
           __html: JSON.stringify(organizationSchema)
         }}
       />
+      <Script
+        id="referral-tracking"
+        src="/scripts/referral-tracking.js"
+        strategy="afterInteractive"
+      />
       <Hero />
       <main>
         {/* Commented out logo cloud for now */}

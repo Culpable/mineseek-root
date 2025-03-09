@@ -16,6 +16,7 @@ export default function MixpanelProvider() {
   useEffect(() => {
     console.log('Initializing Mixpanel with Session Replay...');
     initMixpanel();
+    // Flag is now set in initMixpanel
   }, []);
 
   // Track page views whenever the pathname changes
