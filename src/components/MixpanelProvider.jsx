@@ -1,17 +1,16 @@
 'use client';
 
 import { useEffect } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { initMixpanel, trackPageView } from '@/lib/mixpanelClient';
+import { usePathname } from 'next/navigation';
+import { initMixpanel } from '@/lib/mixpanelClient';
+import mixpanel from '@/lib/mixpanelClient';
 
 /**
  * Client component that initializes Mixpanel with Session Replay
- * Must be wrapped with 'use client' since it uses React hooks
- * Handles page view tracking for client-side navigation
+ * Removed useSearchParams dependency to fix build errors
  */
 export default function MixpanelProvider() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   // Initialize Mixpanel once on component mount
   useEffect(() => {
@@ -19,16 +18,17 @@ export default function MixpanelProvider() {
     initMixpanel();
   }, []);
 
-  // Track page views whenever the URL changes
+  // Track page views whenever the pathname changes
+  // Note: We're no longer tracking query parameters to avoid build errors
   useEffect(() => {
     if (pathname) {
-      const url = searchParams.size > 0 
-        ? `${pathname}?${searchParams.toString()}` 
-        : pathname;
-      
-      trackPageView(url);
+      // Track the page view without search params
+      mixpanel.track('Page View', { 
+        url: pathname,
+        page: pathname
+      });
     }
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   // This component doesn't render anything
   return null;

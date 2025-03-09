@@ -6,9 +6,15 @@ const SITE_URL = 'https://mineseek.com.au'
 
 // Define core routes that should always be included
 const CORE_ROUTES = [
-  '',              // Homepage
-  '/pricing',
-  '/company',
+  '/',              // Homepage
+  '/pricing/',
+  '/company/',
+  '/contact/',
+]
+
+// Define routes that should be excluded from the sitemap
+const EXCLUDED_ROUTES = [
+  '/login/',
 ]
 
 // Generate sitemap XML content
@@ -18,8 +24,8 @@ function generateSitemapXML(urls) {
 ${urls.map(url => `  <url>
     <loc>${url}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>${url === SITE_URL ? 'daily' : 'monthly'}</changefreq>
-    <priority>${url === SITE_URL ? '1.0' : '0.8'}</priority>
+    <changefreq>${url === SITE_URL + '/' ? 'daily' : 'monthly'}</changefreq>
+    <priority>${url === SITE_URL + '/' ? '1.0' : '0.8'}</priority>
   </url>`).join('\n')}
 </urlset>`
 }
@@ -49,12 +55,15 @@ async function generateSitemap() {
           .replace('/page.jsx', '')
           .replace('page.jsx', '')
         
-        // Skip if it's already in core routes
-        if (CORE_ROUTES.includes(`/${path}`)) {
+        // Ensure path ends with a trailing slash
+        const formattedPath = path === '' ? '/' : `/${path}/`
+        
+        // Skip if it's already in core routes or should be excluded
+        if (CORE_ROUTES.includes(formattedPath) || EXCLUDED_ROUTES.includes(formattedPath)) {
           return null
         }
         
-        return path === '' ? SITE_URL : `${SITE_URL}/${path}`
+        return path === '' ? `${SITE_URL}/` : `${SITE_URL}${formattedPath}`
       })
       .filter(Boolean)
 

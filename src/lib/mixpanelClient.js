@@ -18,9 +18,10 @@ export const initMixpanel = () => {
   }
 
   mixpanel.init(MIXPANEL_TOKEN, {
+    debug: true,
     track_pageview: true,
-    persistence: 'cookie',
-    cross_subdomain_cookie: true,
+    persistence: 'localStorage', // Only set this to 'cookie' if using cross-subdomain tracking
+    // cross_subdomain_cookie: true,
     record_sessions_percent: 100,
     record_block_selector: "",
     record_mask_text_selector: ".sensitive-data",
@@ -28,15 +29,6 @@ export const initMixpanel = () => {
     record_idle_timeout_ms: 600000,
     record_min_ms: 3000,
   });
-};
-
-/**
- * Track page view manually
- * Used for client-side navigation in Next.js
- * @param {string} url - The URL to track
- */
-export const trackPageView = (url) => {
-  mixpanel.track('Page View', { url });
 };
 
 /**
