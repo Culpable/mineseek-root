@@ -53,12 +53,26 @@
 
     const fbclid = getQueryParam('fbclid');
     const utmSource = getQueryParam('utm_source');
+    
+    // Additional parameters to capture for Google Ads
+    const campaignId = getQueryParam('campaign');
+    const adGroupId = getQueryParam('adgroup');
+    const keyword = getQueryParam('keyword');
+    
+    // Store additional data for tracking
+    let additionalReferralData = {};
 
     if (fbclid) {
         referralSource = 'Facebook';
     } else if (utmSource) {
         const normalisedUtmSource = utmSource.toLowerCase();
-        if (normalisedUtmSource === 'chatgpt.com') {
+        if (normalisedUtmSource === 'google_ads') {
+            referralSource = 'Google Ads';
+            // Capture additional parameters if present
+            if (campaignId) additionalReferralData.campaignId = campaignId;
+            if (adGroupId) additionalReferralData.adGroupId = adGroupId;
+            if (keyword) additionalReferralData.keyword = keyword;
+        } else if (normalisedUtmSource === 'chatgpt.com') {
             referralSource = 'ChatGPT';
         } else if (normalisedUtmSource === 'perplexity.ai') {
             referralSource = 'Perplexity';
@@ -84,9 +98,17 @@
         attempts++;
         // Safely check if mixpanel is defined and ready
         if (window.mixpanelLoaded && typeof window.mixpanel !== 'undefined' && typeof window.mixpanel.track === 'function') {
-            window.mixpanel.track('Referral Source Identified', {
+            // Create tracking data object
+            const trackingData = {
                 'Referral Source': referralSource
-            });
+            };
+            
+            // Add additional referral data if available
+            if (Object.keys(additionalReferralData).length > 0) {
+                Object.assign(trackingData, additionalReferralData);
+            }
+            
+            window.mixpanel.track('Referral Source Identified', trackingData);
         } else if (attempts < maxAttempts) {
             // Retry after a short delay
             setTimeout(trackReferralSource, interval);
