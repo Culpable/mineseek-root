@@ -1,5 +1,7 @@
 import '@/styles/tailwind.css'
 import localFont from 'next/font/local'
+import Script from 'next/script'
+import { googleAdsScript } from '@/scripts/google-ads'
 
 // Load Switzer font files locally for optimal performance
 const switzer = localFont({
@@ -113,6 +115,19 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={switzer.variable}>
+      {/* Google Ads tracking script */}
+      <Script
+        id="google-ads-tag"
+        src={googleAdsScript.src}
+        strategy="afterInteractive"
+      />
+      <Script
+        id="google-ads-config"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: googleAdsScript.configScript
+        }}
+      />
       <body className="text-gray-950 antialiased">{children}</body>
     </html>
   )
