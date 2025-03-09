@@ -14,8 +14,8 @@ import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 const links = [
   { href: '/pricing', label: 'Pricing' },
   { href: '/company', label: 'Company' },
-  { href: '/contact', label: 'Contact' },
   { href: 'https://app.mineseek.com.au/', label: 'Login' },
+  { href: '/contact', label: 'Book a Demo' },
 ]
 
 function DesktopNav() {
@@ -23,12 +23,23 @@ function DesktopNav() {
     <nav className="relative hidden lg:flex">
       {links.map(({ href, label }) => (
         <PlusGridItem key={href} className="relative flex">
-          <Link
-            href={href}
-            className="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-[hover]:bg-black/[2.5%]"
-          >
-            {label}
-          </Link>
+          {label === 'Book a Demo' ? (
+            <Link
+              href={href}
+              className="inline-flex items-center mx-2 text-sm font-semibold transition"
+            >
+              <div className="rounded-full px-4 py-2.5 bg-black text-white hover:bg-gray-800 transition">
+                <span className="relative top-px">{label}</span>
+              </div>
+            </Link>
+          ) : (
+            <Link
+              href={href}
+              className="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-[hover]:bg-black/[2.5%]"
+            >
+              {label}
+            </Link>
+          )}
         </PlusGridItem>
       ))}
     </nav>
@@ -61,9 +72,20 @@ function MobileNav() {
             }}
             key={href}
           >
-            <Link href={href} className="text-base font-medium text-gray-950">
-              {label}
-            </Link>
+            {label === 'Book a Demo' ? (
+              <Link 
+                href={href} 
+                className="inline-flex items-center mx-2 text-sm font-semibold transition"
+              >
+                <div className="rounded-full px-4 py-1.5 bg-black text-white hover:bg-gray-800 transition">
+                  <span className="relative top-px">{label}</span>
+                </div>
+              </Link>
+            ) : (
+              <Link href={href} className="text-base font-medium text-gray-950">
+                {label}
+              </Link>
+            )}
           </motion.div>
         ))}
       </div>
