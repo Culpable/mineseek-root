@@ -121,7 +121,8 @@ const tiers = [
 function Header() {
   return (
     <Container className="mt-16">
-      <Heading as="h1">Pricing plans for teams of all sizes</Heading>
+      <Subheading>Custom solutions</Subheading>
+      <Heading as="h1">Pricing plans for teams of all sizes.</Heading>
       <Lead className="mt-6 max-w-3xl">
         Mining companies across Australia use Mine Seek to accelerate their exploration. Custom plans to suit your needs.
       </Lead>

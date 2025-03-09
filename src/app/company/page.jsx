@@ -16,7 +16,7 @@ function Header() {
   return (
     <Container className="mt-16">
       <Subheading>Our Company</Subheading>
-      <Heading as="h1">Transforming mining exploration with AI</Heading>
+      <Heading as="h1">Transforming mining exploration with AI.</Heading>
       <Lead className="mt-6 max-w-3xl">
         We're on a mission to revolutionise how mining exploration teams discover, analyse, and interpret geological data through advanced AI and intelligent workflows.
       </Lead>

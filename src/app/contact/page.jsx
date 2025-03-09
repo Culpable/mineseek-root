@@ -20,7 +20,7 @@ export default function Contact() {
       </Container>
       <Container className="mt-16">
         <Subheading>Contact Us</Subheading>
-        <Heading>Accelerate your exploration</Heading>
+        <Heading>Accelerate your exploration.</Heading>
         {/* <Lead className="mt-6 max-w-3xl">
           Ready to transform your mining exploration with AI? Contact us to see how we can help your team discover, analyse, and interpret geological data faster than ever before.
         </Lead> */}
