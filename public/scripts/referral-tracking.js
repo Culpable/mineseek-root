@@ -48,11 +48,22 @@
         );
     }
 
+    // Function to check if the referrer is LinkedIn
+    function isLinkedInSource() {
+        return (
+            referringDomain && (
+                referringDomain.includes('linkedin.com') || 
+                referringDomain.includes('lnkd.in')
+            )
+        );
+    }
+
     // Determine referral source
     let referralSource = 'Direct or Other';
 
     const fbclid = getQueryParam('fbclid');
     const utmSource = getQueryParam('utm_source');
+    const liclid = getQueryParam('liclid'); // LinkedIn click identifier
     
     // Additional parameters to capture for Google Ads
     const campaignId = getQueryParam('campaign');
@@ -64,6 +75,8 @@
 
     if (fbclid) {
         referralSource = 'Facebook';
+    } else if (liclid) {
+        referralSource = 'LinkedIn';
     } else if (utmSource) {
         const normalisedUtmSource = utmSource.toLowerCase();
         if (normalisedUtmSource === 'google_ads') {
@@ -78,6 +91,8 @@
             referralSource = 'Perplexity';
         } else if (normalisedUtmSource === 'deepseek.com') {
             referralSource = 'DeepSeek';
+        } else if (normalisedUtmSource === 'linkedin' || normalisedUtmSource === 'linkedin.com') {
+            referralSource = 'LinkedIn';
         } else {
             referralSource = normalisedUtmSource;
         }
@@ -87,6 +102,8 @@
         referralSource = 'Google';
     } else if (isBingSource()) {
         referralSource = 'Bing';
+    } else if (isLinkedInSource()) {
+        referralSource = 'LinkedIn';
     } // No need for an else here as 'Direct or Other' is already set by default
 
     // Polling mechanism to ensure MixPanel is loaded before tracking
