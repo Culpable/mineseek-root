@@ -82,9 +82,26 @@
         if (normalisedUtmSource === 'google_ads') {
             referralSource = 'Google Ads';
             // Capture additional parameters if present
-            if (campaignId) additionalReferralData.campaignId = campaignId;
-            if (adGroupId) additionalReferralData.adGroupId = adGroupId;
-            if (keyword) additionalReferralData.keyword = keyword;
+            if (campaignId) additionalReferralData['Campaign ID'] = campaignId;
+            if (adGroupId) additionalReferralData['Ad Group ID'] = adGroupId;
+            if (keyword) additionalReferralData['Keyword Match'] = keyword;
+            
+            // New parameters with human-readable names
+            const creative = getQueryParam('creative');
+            const deviceType = getQueryParam('device');
+            const adPosition = getQueryParam('adposition');
+            
+            if (creative) additionalReferralData['Ad Creative'] = creative;
+            if (deviceType) {
+                // Convert device code to readable format
+                let deviceName = 'Unknown';
+                if (deviceType === 'c') deviceName = 'Computer';
+                else if (deviceType === 'm') deviceName = 'Mobile';
+                else if (deviceType === 't') deviceName = 'Tablet';
+                
+                additionalReferralData['Device Type'] = deviceName;
+            }
+            if (adPosition) additionalReferralData['Ad Position'] = adPosition;
         } else if (normalisedUtmSource === 'chatgpt.com') {
             referralSource = 'ChatGPT';
         } else if (normalisedUtmSource === 'perplexity.ai') {
