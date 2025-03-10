@@ -23,7 +23,7 @@ const tiers = [
     name: 'Starter',
     slug: 'starter',
     description: 'Get started with AI-powered geological insights.',
-    priceMonthly: 899,
+    priceMonthly: 429,
     currency: 'AUD',
     href: '/contact',
     highlights: [
@@ -54,7 +54,7 @@ const tiers = [
     name: 'Growth',
     slug: 'growth',
     description: 'Accelerate discoveries with advanced AI tools.',
-    priceMonthly: 1799,
+    priceMonthly: 829,
     currency: 'AUD',
     href: '/contact',
     highlights: [
