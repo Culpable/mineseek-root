@@ -24,8 +24,8 @@ function generateSitemapXML(urls) {
 ${urls.map(url => `  <url>
     <loc>${url}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>${url === SITE_URL + '/' ? 'daily' : 'monthly'}</changefreq>
-    <priority>${url === SITE_URL + '/' ? '1.0' : '0.8'}</priority>
+    <changefreq>${url === SITE_URL ? 'daily' : 'monthly'}</changefreq>
+    <priority>${url === SITE_URL ? '1.0' : '0.8'}</priority>
   </url>`).join('\n')}
 </urlset>`
 }
@@ -34,7 +34,10 @@ ${urls.map(url => `  <url>
 async function generateSitemap() {
   try {
     // Create URLs for core routes
-    const coreUrls = CORE_ROUTES.map(route => `${SITE_URL}${route}`)
+    const coreUrls = CORE_ROUTES.map(route => {
+      // For homepage, don't add trailing slash to the base URL
+      return route === '/' ? SITE_URL : `${SITE_URL}${route}`
+    })
 
     // Get all .jsx files in the pages directory
     const pages = await globby([
@@ -58,12 +61,17 @@ async function generateSitemap() {
         // Ensure path ends with a trailing slash
         const formattedPath = path === '' ? '/' : `/${path}/`
         
-        // Skip if it's already in core routes or should be excluded
-        if (CORE_ROUTES.includes(formattedPath) || EXCLUDED_ROUTES.includes(formattedPath)) {
+        // Skip if it's in the excluded routes
+        if (EXCLUDED_ROUTES.includes(formattedPath)) {
           return null
         }
         
-        return path === '' ? `${SITE_URL}/` : `${SITE_URL}${formattedPath}`
+        // Skip if it's already in core routes
+        if (CORE_ROUTES.includes(formattedPath)) {
+          return null
+        }
+        
+        return path === '' ? SITE_URL : `${SITE_URL}${formattedPath}`
       })
       .filter(Boolean)
 

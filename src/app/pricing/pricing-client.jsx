@@ -130,6 +130,20 @@ function Header() {
   )
 }
 
+function CustomBanner() {
+  return (
+    <div className="-m-2 grid grid-cols-1 rounded-4xl mx-auto max-w-4xl mt-20 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
+      <div className="grid grid-cols-1 rounded-4xl p-2 shadow-md shadow-black/5">
+        <div className="rounded-3xl bg-white p-10 pb-9 shadow-2xl ring-1 ring-black/5 text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-950">Can’t find the perfect fit? We’ll create one.</h2>
+          <p className="mt-3 text-lg text-gray-600">Custom plans tailored to your exploration team’s specific needs</p>
+          <Button href="/contact" className="mt-6">Contact Us</Button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function PricingCards() {
   return (
     <div className="relative py-24">
@@ -140,6 +154,9 @@ function PricingCards() {
             <PricingCard key={tierIndex} tier={tier} />
           ))}
         </div>
+        
+        <CustomBanner />
+        
         {/* <LogoCloud className="mt-24" /> */}
       </Container>
     </div>
@@ -388,8 +405,8 @@ function Testimonial() {
           <div className="flex max-lg:mt-16 lg:col-span-2 lg:px-16">
             <figure className="mx-auto flex max-w-xl flex-col gap-16 max-lg:text-center">
               <blockquote>
-                <p className="relative text-3xl tracking-tight text-white before:absolute before:-translate-x-full before:content-['“'] after:absolute after:content-['”'] lg:text-4xl">
-                  Mine Seek’s ability to cross-reference multiple data sources has radically accelerated our desicion making. We're making more informed decisions with greater confidence.
+                <p className="relative text-3xl tracking-tight text-white before:absolute before:-translate-x-full before:content-['\u201C'] after:absolute after:content-['\u201D'] lg:text-4xl">
+                  Mine Seek&apos;s ability to cross-reference multiple data sources has radically accelerated our desicion making. We&apos;re making more informed decisions with greater confidence.
                 </p>
               </blockquote>
               <figcaption className="mt-auto">
