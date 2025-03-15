@@ -102,6 +102,21 @@ Currently disabled but preserved in `_disabled_pages/`:
 
 The site auto-updates when files in `/src` are modified.
 
+### Sitemap Generation
+
+The site uses a custom script to generate the sitemap.xml file. To generate or update the sitemap:
+
+```bash
+node src/scripts/generate-sitemap.js
+```
+
+This script:
+- Creates an XML sitemap based on the site's pages
+- Automatically adds trailing slashes to URLs (except homepage)
+- Excludes specified routes (e.g., login page)
+- Outputs to `public/sitemap.xml`
+- Should be run before deployment when adding new pages
+
 ### Component Architecture
 - Server Components are the default (no 'use client' directive needed)
 - Client Components should be used only when necessary for:
