@@ -74,9 +74,18 @@ function MobileNav() {
             key={href}
           >
             {label === 'Book a Demo' ? (
-              <div className="mx-2">
-                <Button href={href}>{label}</Button>
-              </div>
+              <>
+                {/* V1: Centered button */}
+                {/* <div className="mx-auto max-w-fit">
+                  <Button href={href}>{label}</Button>
+                </div> */}
+                
+                {/* V2: Completely left-aligned button with no margin */}
+                <div>
+                  <Button href={href}>{label}</Button>
+                </div>
+                
+              </>
             ) : (
               <Link href={href} className="text-base font-medium text-gray-950">
                 {label}
