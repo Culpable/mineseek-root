@@ -2,6 +2,7 @@ import '@/styles/tailwind.css'
 import localFont from 'next/font/local'
 import Script from 'next/script'
 import { googleAdsScript } from '@/scripts/google-ads'
+import { linkedinTrackingScript } from '@/scripts/linkedin-tracking'
 import MixpanelProvider from '@/components/MixpanelProvider'
 
 // Load Switzer font files locally for optimal performance
@@ -129,9 +130,30 @@ export default function RootLayout({ children }) {
           __html: googleAdsScript.configScript
         }}
       />
+      
+      {/* LinkedIn tracking script */}
+      <Script
+        id="linkedin-tracking"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: linkedinTrackingScript.script
+        }}
+      />
+      
       <body className="text-gray-950 antialiased">
         <MixpanelProvider />
         {children}
+        
+        {/* LinkedIn fallback for users with JavaScript disabled */}
+        <noscript>
+          <img 
+            height="1" 
+            width="1" 
+            style={{ display: 'none' }} 
+            alt="" 
+            src={linkedinTrackingScript.noscriptImg} 
+          />
+        </noscript>
       </body>
     </html>
   )
