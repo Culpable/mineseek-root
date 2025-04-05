@@ -7,7 +7,7 @@ export const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Mine Seek",
-    "alternateName": "Mine Seek: An AI-Powered Platform for Mining Exploration",
+    "alternateName": ["Mine Seek: An AI-Powered Platform for Mining Exploration", "MineSeek"],
     "url": "https://mineseek.com.au/",
     "logo": "https://mineseek.com.au/logos/mine-seek.png",
     "image": "https://mineseek.com.au/logos/mine-seek-ai-exploration.png",
