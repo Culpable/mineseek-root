@@ -11,6 +11,7 @@ const MIXPANEL_TOKEN = '187560cd6dae284087bd43a242bde46e';
  * - Recording 100% of sessions
  * - Masks sensitive data and collects font information
  * - Session timeouts configured for optimal recording
+ * - Heatmap data collection enabled for click tracking
  */
 export const initMixpanel = () => {
   mixpanel.init(MIXPANEL_TOKEN, {
@@ -18,6 +19,7 @@ export const initMixpanel = () => {
     persistence: 'localStorage', // Only set this to 'cookie' if using cross-subdomain tracking
     // cross_subdomain_cookie: true,
     record_sessions_percent: 100,
+    record_heatmap_data: true, // Enable heatmap data collection for click tracking
     record_block_selector: "",
     record_mask_text_selector: ".sensitive-data",
     record_collect_fonts: true,
