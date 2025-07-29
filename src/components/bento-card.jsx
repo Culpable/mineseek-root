@@ -2,6 +2,7 @@
 
 import { clsx } from 'clsx'
 import { motion } from 'framer-motion'
+import { useState, useRef } from 'react'
 import { Subheading } from './text'
 
 export function BentoCard({
@@ -14,10 +15,27 @@ export function BentoCard({
   fade = [],
   fadeIntensity = 1,
 }) {
+  const [isActive, setIsActive] = useState(false)
+  const timerRef = useRef(null)
+
+  // Handle mobile tap to trigger animation
+  const handleTouchStart = () => {
+    // Clear any existing timer
+    if (timerRef.current) {
+      clearTimeout(timerRef.current)
+    }
+    
+    setIsActive(true)
+    // Keep animation running for 2 seconds after tap
+    timerRef.current = setTimeout(() => setIsActive(false), 2000)
+  }
+
   return (
     <motion.div
       initial="idle"
       whileHover="active"
+      animate={isActive ? "active" : "idle"}
+      onTouchStart={handleTouchStart}
       variants={{ idle: {}, active: {} }}
       data-dark={dark ? 'true' : undefined}
       className={clsx(
