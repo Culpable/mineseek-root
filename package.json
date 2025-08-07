@@ -25,7 +25,6 @@
     "next-sanity": "^9.4.7",
     "react": "^18",
     "react-dom": "^18",
-    "react-player": "^3.3.1",
     "react-use-measure": "^2.1.1",
     "sanity": "^3.55.0"
   },
