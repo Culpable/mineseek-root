@@ -1,0 +1,8 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+<task>
+When the user mentions this file, you must run git commands to see everything that's been updated (git status, git diff, etc) - both unstaged and staged - git add anything unstaged, then commit everything into a single commit message as per the guidelines outlined in [@git-commit-message-format.mdc](mdc:.cursor/rules/@git-commit-message-format.mdc).
+</task>
