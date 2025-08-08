@@ -59,11 +59,8 @@ function VideoHero() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="mt-12 flex flex-col items-center gap-x-6 gap-y-4 sm:flex-row sm:justify-center">
-            <Button href="/contact">Book a demo</Button>
-            <Button variant="secondary" href="/pricing">
-              See pricing
-            </Button>
+          <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row sm:justify-center">
+            <Button href="/contact" className="w-full sm:w-auto">Book a demo</Button>
           </div>
         </div>
       </Container>
