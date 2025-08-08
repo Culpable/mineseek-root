@@ -31,7 +31,7 @@ function VideoHero() {
         
         <div className="pb-24 pt-16 sm:pb-32 sm:pt-24 md:pb-48 md:pt-32">
           <div className="text-center">
-            <Subheading>DEMO</Subheading>
+            <Subheading>PRODUCT TOUR</Subheading>
             <h1 className="mt-2 font-display text-balance text-5xl/[0.9] font-medium tracking-tight text-gray-950 sm:text-7xl/[0.8] md:text-7xl/[0.8]">
               The Extractor Grid
             </h1>
@@ -74,16 +74,16 @@ function KeyFeatures() {
     {
       icon: DocumentMagnifyingGlassIcon,
       title: 'Advanced Field Detection',
-      description: 'Pinpoints drill hole collars, downhole surveys, and lithology logs buried in complex technical reports.'
+      description: 'Pinpoint drill hole collars, downhole surveys, and lithology logs buried in complex technical reports.'
     },
     {
       icon: TableCellsIcon,
       title: 'Intelligent Schema Mapping',
-      description: 'Converts PDFs into drill-ready spreadsheets with standardised columns for depths, azimuths, and grades.'
+      description: 'Convert PDFs into drill-ready spreadsheets with standardised columns for depths, azimuths, and grades.'
     },
     {
       icon: SparklesIcon,
-      title: 'Agentic-AI Insights',
+      title: 'Agentic-AI Processing',
       description: 'Reads surrounding text to infer units, formations, and methods, reducing errors and hallucinations.'
     },
     {
@@ -93,8 +93,8 @@ function KeyFeatures() {
     },
     {
       icon: PencilIcon,
-      title: 'Understands Handwritten Notes',
-      description: 'Deciphers field notes, hand‑logged intervals, and annotated maps from decades of exploration.'
+      title: 'Decipher Handwritten Notes',
+      description: 'Transcribe field notes, hand‑logged intervals, and annotated maps from decades of exploration.'
     },
     {
       icon: QuestionMarkCircleIcon,
@@ -123,9 +123,9 @@ function KeyFeatures() {
     <div className="bg-gradient-to-b from-white from-50% to-gray-100 py-32">
       <Container>
         <div className="text-center">
-          <Subheading>FEATURES</Subheading>
+          <Subheading>AT A GLANCE</Subheading>
           <Heading as="h2" className="mt-2 max-w-3xl mx-auto">
-            Everything you need to structure your geology data
+            Unlock the value hidden in your exploration archives
           </Heading>
         </div>
 
@@ -154,9 +154,9 @@ function HowItWorks() {
     <div className="mx-2 mt-2 rounded-4xl bg-gray-900 py-32">
       <Container>
         <div className="text-center">
-          <Subheading dark>HOW IT WORKS</Subheading>
+          <Subheading dark>UPLOAD • EXTRACT • EXPORT</Subheading>
           <Heading as="h2" dark className="mt-2 max-w-3xl mx-auto">
-            From field notes to export‑ready tables in three simple steps
+            Transform exploration reports into actionable datasets
           </Heading>
         </div>
 
@@ -166,7 +166,7 @@ function HowItWorks() {
               <ArrowUpTrayIcon className="h-8 w-8" />
             </div>
             <h3 className="mt-6 text-xl font-semibold text-white">
-              Upload your PDFs
+              Upload your documents
             </h3>
             <p className="mt-4 text-gray-400">
               Simply drag and drop any report. Digital or scanned, modern or historical—we handle them all.
@@ -178,7 +178,7 @@ function HowItWorks() {
               <SparklesIcon className="h-8 w-8" />
             </div>
             <h3 className="mt-6 text-xl font-semibold text-white">
-              AI extracts every record
+              AI extracts valuable data
             </h3>
             <p className="mt-4 text-gray-400">
               Our custom AI agents transform your documents into a clean schema based on your desired format.
