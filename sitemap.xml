@@ -2,25 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mineseek.com.au</loc>
-    <lastmod>2025-03-15T07:10:48.202Z</lastmod>
+    <lastmod>2025-08-08T03:30:25.653Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://mineseek.com.au/pricing/</loc>
-    <lastmod>2025-03-15T07:10:48.203Z</lastmod>
+    <lastmod>2025-08-08T03:30:25.654Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mineseek.com.au/company/</loc>
-    <lastmod>2025-03-15T07:10:48.203Z</lastmod>
+    <lastmod>2025-08-08T03:30:25.654Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mineseek.com.au/contact/</loc>
-    <lastmod>2025-03-15T07:10:48.203Z</lastmod>
+    <lastmod>2025-08-08T03:30:25.654Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mineseek.com.au/extractor-table/</loc>
+    <lastmod>2025-08-08T03:30:25.654Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
