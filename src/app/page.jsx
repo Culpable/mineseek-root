@@ -142,9 +142,9 @@ function BentoSection() {
           className="lg:col-span-2 lg:rounded-bl-4xl rounded-bl-4xl max-lg:rounded-t-4xl lg:rounded-tl-4xl max-lg:rounded-br-4xl"
         />
         <BentoCard
-          eyebrow="GLOBAL"
-          title="Global insights"
-          description="From Australia to Zambia, discover exploration opportunities across the globe."
+          eyebrow="NATIONWIDE"
+          title="Australia‑wide insights"
+          description="Purpose‑built for exploration teams targeting minerals across Australia."
           graphic={<Map />}
           className="lg:col-span-2 max-lg:rounded-4xl"
         />

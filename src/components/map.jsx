@@ -35,13 +35,30 @@ function Marker({ src, top, offset, delay }) {
 export function Map() {
   return (
     <div aria-hidden="true" className="relative size-full">
-      <div className="absolute inset-0 bg-[url(/map.png)] bg-[length:530px_430px] bg-[center_-75px] bg-no-repeat [mask-image:linear-gradient(to_bottom,black_50%,transparent)]" />
+      <div className="absolute inset-0 bg-[url(/map-australia.png)] bg-[length:400px_336px] bg-[center_top_20px] bg-no-repeat [mask-image:linear-gradient(to_bottom,black_50%,transparent)]" />
+      {/* Optional: Add a subtle white overlay for more lightening */}
+      <div className="absolute inset-0 bg-white/75" />
       <div className="absolute inset-0">
-        <Marker src="/map/gold.png" top={96} offset={-128} delay={0.15} />
-        <Marker src="/map/silver.png" top={160} offset={-16} delay={0.4} />
-        <Marker src="/map/copper.png" top={144} offset={96} delay={0.3} />
-        <Marker src="/map/iron.png" top={192} offset={64} delay={0.6} />
-        <Marker src="/map/cobalt.png" top={224} offset={-32} delay={0.8} />
+        {/* Darwin - North central */}
+        <Marker src="/map/lithium.png" top={15} offset={-40} delay={0.1} />
+
+        {/* Perth - West coast */}
+        <Marker src="/map/cobalt.png" top={185} offset={-180} delay={0.15} />
+
+        {/* Pilbara - Northwest WA */}
+        <Marker src="/map/iron.png" top={110} offset={-155} delay={0.2} />
+
+        {/* Brisbane - East coast */}
+        <Marker src="/map/aluminium.png" top={150} offset={160} delay={0.3} />
+
+        {/* Sydney - East coast */}
+        <Marker src="/map/silver.png" top={210} offset={135} delay={0.5} />
+
+        {/* Melbourne - Southeast corner */}
+        <Marker src="/map/gold.png" top={245} offset={85} delay={0.7} />
+
+        {/* Adelaide - South central */}
+        <Marker src="/map/copper.png" top={205} offset={20} delay={0.9} />
       </div>
     </div>
   )
