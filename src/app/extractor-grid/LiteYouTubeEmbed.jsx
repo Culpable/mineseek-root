@@ -59,7 +59,7 @@ export default function LiteYouTubeEmbed({
         liteYoutube.setAttribute('playlabel', playlabel || `Play Video: ${title}` || 'Play Video')
         
         // Player parameters for optimal UX
-        const defaultParams = 'modestbranding=1&rel=0&start=0'
+        const defaultParams = 'modestbranding=1&rel=0&start=0rel=0'
         const finalParams = params ? `${defaultParams}&${params}` : defaultParams
         liteYoutube.setAttribute('params', finalParams)
         
@@ -119,13 +119,12 @@ export default function LiteYouTubeEmbed({
         {/* Fallback markup for no-JS environments and during loading */}
         {!isLoaded && (
           <div className={`absolute inset-0 flex flex-col items-center justify-center text-white ${scriptLoaded ? 'lite-youtube-loading' : 'bg-gray-900'}`}>
-            {/* Fallback link that works without JavaScript */}
-            <a 
-              href={`https://youtube.com/watch?v=${videoid}`}
-              className="group flex flex-col items-center justify-center text-center p-8 hover:bg-gray-800/50 transition-colors rounded-lg z-10"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Fallback control that does NOT navigate to YouTube */}
+            <button 
+              type="button"
+              className="group flex flex-col items-center justify-center text-center p-8 hover:bg-gray-800/50 transition-colors rounded-lg z-10 cursor-default"
               aria-label={playlabel || `Play Video: ${title}` || 'Play Video'}
+              disabled
             >
               {/* Play button icon */}
               <div className="w-16 h-16 flex items-center justify-center bg-red-600 rounded-full mb-4 group-hover:bg-red-700 transition-colors">
@@ -133,19 +132,17 @@ export default function LiteYouTubeEmbed({
                   <path d="M8 5v14l11-7z"/>
                 </svg>
               </div>
-              
               {/* Title */}
               {title && (
                 <h3 className="text-lg font-medium mb-2 group-hover:text-gray-100">
                   {title}
                 </h3>
               )}
-              
-              {/* Call to action */}
+              {/* Status message */}
               <span className="text-sm text-gray-400 group-hover:text-gray-300">
-                {scriptLoaded ? 'Loading video player...' : 'Click to watch on YouTube'}
+                {scriptLoaded ? 'Loading video player…' : 'Preparing player…'}
               </span>
-            </a>
+            </button>
           </div>
         )}
       </div>

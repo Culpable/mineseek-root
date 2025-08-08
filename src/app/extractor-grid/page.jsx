@@ -49,7 +49,7 @@ function VideoHero() {
                     videoid="qGk6nN2uFWg" 
                     title="Extractor Grid / Mine Seek"
                     playlabel="Play demonstration video: See how Extractor Grid structures geological data"
-                    params="controls=1&modestbranding=2&enablejsapi=1"
+                    params="controls=1&enablejsapi=1"
                     jsApi={true}
                     style={{ backgroundImage: 'url(/screenshots/extractor-grid.png)' }}
                   />
@@ -83,12 +83,12 @@ function KeyFeatures() {
     },
     {
       icon: SparklesIcon,
-      title: 'AI‑Powered Insights',
+      title: 'Agentic-AI Insights',
       description: 'Reads surrounding text to infer units, formations, and methods, reducing errors and hallucinations.'
     },
     {
       icon: CloudArrowDownIcon,
-      title: 'Export Ready',
+      title: 'Export Ready Data',
       description: 'One‑click export to industry formats—CSV, Excel, and GIS for Leapfrog, Micromine, and Surpac.'
     },
     {
@@ -156,7 +156,7 @@ function HowItWorks() {
         <div className="text-center">
           <Subheading dark>HOW IT WORKS</Subheading>
           <Heading as="h2" dark className="mt-2 max-w-3xl mx-auto">
-            From chaos to clarity in three simple steps
+            From field notes to export‑ready tables in three simple steps
           </Heading>
         </div>
 
