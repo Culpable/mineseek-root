@@ -16,7 +16,7 @@
 ---
 
 ### ~~Make naming consistent: use “Extractor Grid” everywhere~~ ✅ **COMPLETED**
-- Updated `src/app/extractor-table/layout.jsx` metadata title/description to “Extractor Grid Demo”.
+- Updated metadata title/description to “Extractor Grid Demo”.
 - Updated hero H1 to “The Extractor Grid”.
 - Updated video title/play label to reference “Extractor Grid”.
 

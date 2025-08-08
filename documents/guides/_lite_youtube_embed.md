@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Extractor Table demo page uses Paul Irish’s `lite-youtube-embed` to render a fast, privacy‑friendly YouTube facade that defers the heavy iframe until interaction. Our implementation adds robust CSS to ensure the play overlay reliably displays alongside Mine Seek’s styling and Tailwind resets. Upstream reference: [lite‑youtube‑embed](https://github.com/paulirish/lite-youtube-embed).
+The Extractor Grid demo page uses Paul Irish’s `lite-youtube-embed` to render a fast, privacy‑friendly YouTube facade that defers the heavy iframe until interaction. Our implementation adds robust CSS to ensure the play overlay reliably displays alongside Mine Seek’s styling and Tailwind resets. Upstream reference: [lite‑youtube‑embed](https://github.com/paulirish/lite-youtube-embed).
 
 <important_note>
 
@@ -15,7 +15,7 @@ The Extractor Table demo page uses Paul Irish’s `lite-youtube-embed` to render
 ## File Structure
 
 ```
-src/app/extractor-table/
+src/app/extractor-grid/
 ├── LiteYouTubeEmbed.jsx    # Client component that initialises <lite-youtube>
 └── page.jsx                # Uses LiteYouTubeEmbed inside an aspect-ratio box
 
@@ -32,11 +32,11 @@ public/
 - **Poster override** is optional; if provided, it is respected by the custom element.
 
 ```jsx
-// src/app/extractor-table/page.jsx
+// src/app/extractor-grid/page.jsx
 <LiteYouTubeEmbed
   videoid="qGk6nN2uFWg"
-  title="Mine Seek Extractor Table Demo"
-  playlabel="Play demonstration video: Watch how Mine Seek transforms geological data"
+  title="Mine Seek Extractor Grid Demo"
+  playlabel="Play demonstration video: See how Extractor Grid structures geological data"
   params="controls=1&modestbranding=2&enablejsapi=1"
   jsApi={true}
   style={{ backgroundImage: 'url(/screenshots/extractor-table.png)' }}

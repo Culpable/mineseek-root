@@ -2,12 +2,12 @@
 
 ## Overview
 
-Successfully implemented all recommended `lite-youtube-embed` performance optimizations for the Mine Seek Extractor Table demo page at `/extractor-table/`. These optimizations ensure minimal initial page load while maintaining full video functionality.
+Successfully implemented all recommended `lite-youtube-embed` performance optimizations for the Mine Seek Extractor Grid demo page at `/extractor-grid/`. These optimizations ensure minimal initial page load while maintaining full video functionality.
 
 ## Implemented Optimizations
 
 ### ✅ 1. Progressive Enhancement Loading
-**Location**: `src/app/extractor-table/LiteYouTubeEmbed.jsx`
+**Location**: `src/app/extractor-grid/LiteYouTubeEmbed.jsx`
 
 - **Implementation**: Deferred script loading with 100ms delay
 - **Benefits**: Critical HTML loads first, JS bundle loads asynchronously
@@ -23,7 +23,7 @@ Successfully implemented all recommended `lite-youtube-embed` performance optimi
   ```
 
 ### ✅ 2. Title Attribute & Accessibility
-**Location**: `src/app/extractor-table/page.jsx` & `LiteYouTubeEmbed.jsx`
+**Location**: `src/app/extractor-grid/page.jsx` & `LiteYouTubeEmbed.jsx`
 
 - **Implementation**: Added `title` and custom `playlabel` attributes
 - **Benefits**: Screen reader support, improved accessibility scores
@@ -31,7 +31,7 @@ Successfully implemented all recommended `lite-youtube-embed` performance optimi
   ```jsx
   <LiteYouTubeEmbed 
     videoid="qGk6nN2uFWg" 
-    title="Mine Seek Extractor Table Demo"
+    title="Mine Seek Extractor Grid Demo"
     playlabel="Play demonstration video: Watch how Mine Seek transforms geological data"
   />
   ```
@@ -137,10 +137,9 @@ import LiteYouTubeEmbed from './LiteYouTubeEmbed'
 
 ## File Structure
 ```
-src/app/extractor-table/
+src/app/extractor-grid/
 ├── LiteYouTubeEmbed.jsx    # Optimized component with all features
 ├── page.jsx                # Updated to use enhanced component
-└── layout.jsx              # SEO metadata (unchanged)
 
 public/
 └── lite-youtube-embed.css  # Enhanced with Mine Seek design integration

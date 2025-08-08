@@ -47,11 +47,11 @@ function VideoHero() {
                 <div className="aspect-video w-full">
                   <LiteYouTubeEmbed 
                     videoid="qGk6nN2uFWg" 
-                    title="Mine Seek Extractor Grid Demo"
+                    title="Extractor Grid / Mine Seek"
                     playlabel="Play demonstration video: See how Extractor Grid structures geological data"
                     params="controls=1&modestbranding=2&enablejsapi=1"
                     jsApi={true}
-                    style={{ backgroundImage: 'url(/screenshots/extractor-table.png)' }}
+                    style={{ backgroundImage: 'url(/screenshots/extractor-grid.png)' }}
                   />
                 </div>
               </div>
