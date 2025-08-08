@@ -143,7 +143,7 @@ Fixed bug preventing historical analysis when recent data only included upfront 
 
 9. Use simple action words (Created, Added, Updated, Removed).
 
-10. New lines MUST be used strategically to space out your commit message, enhancing readability.
+10. New lines MUST be used strategically to space out your commit message, enhancing readability. IMPORTANT: When executing the git commit command, use actual line breaks in the multi-line string, not \n escape sequences.
 
 11. When summarising changes, always specify if a change is related to a function, a file, or a layout. This will provide context and help ensure the commit message is meaningful and understandable.
 
@@ -175,6 +175,7 @@ This MUST be a valid git commit message, which means:
 2. It starts with git commit -m " and ends with "
 3. The only " marks are in 2., which surround the message
 4. It cannot contain backticks within the output, as this will break the git commit message
+5. CRITICAL: Use actual line breaks and spacing in the message, NOT escape sequences like \n or \t. The examples above show multi-line strings with real line breaks - follow that exact format when executing the git commit command.
 </task_description>
 
 Your immediate task is to:
@@ -218,3 +219,5 @@ git commit -m "
 </output_format>
 
 Remember: your output MUST ONLY be a valid git commit message formatted as a bash code block as per the rules provided, nothing else.
+
+EXECUTION NOTE: When actually running the git commit command, use the multi-line format shown in the examples with real line breaks, not \n escape sequences. The shell command should look exactly like the examples above with proper spacing and indentation.

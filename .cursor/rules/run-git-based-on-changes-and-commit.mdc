@@ -5,4 +5,6 @@ alwaysApply: false
 ---
 <task>
 When the user mentions this file, you must run git commands to see everything that's been updated (git status, git diff, etc) - both unstaged and staged - git add anything unstaged, then commit everything into a single commit message as per the guidelines outlined in [@git-commit-message-format.mdc](mdc:.cursor/rules/@git-commit-message-format.mdc).
+
+CRITICAL: When executing the git commit command, you MUST use actual line breaks in the commit message, NOT escape sequences like \n. The examples in git-commit-message-format.mdc show multi-line strings with real spacing - follow that exact format. Do not use \n, \t, or other escape sequences.
 </task>
