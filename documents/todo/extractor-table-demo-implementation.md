@@ -377,6 +377,60 @@ React Player fails in Next.js 14 App Router because its nested dynamic imports b
 • Privacy-friendly `youtube-nocookie.com` by default.  
 • Full control over poster image, parameters, and IFrame API when required.
 
+
+#### 🔧 Play Button Visibility Fix (February 2025)
+
+- **Symptom**: After a hard refresh, the YouTube play button briefly appeared, then disappeared as the page finished loading.
+- **Root Cause**:
+  - Tailwind's base resets remove background images on `button` elements, which cleared the `.lty-playbtn` background SVG used by `lite-youtube-embed`.
+  - Our stylesheet was loaded with a `media="print"` progressive pattern, causing a timing race where the reset applied before the component's overlay styles.
+- **Fix Applied**:
+  - Load the `lite-youtube-embed` stylesheet immediately (no `media=print` swap) so overlay styles are present before initialisation.
+  - Strengthened `.lty-playbtn` styles to ensure the icon always overlays the thumbnail and survives resets:
+    - `position: absolute; inset: 0;` to cover the host element fully.
+    - Forced the SVG icon with `background-image: data-URL !important`.
+- **Files Updated**:
+  - `src/app/extractor-table/LiteYouTubeEmbed.jsx` — load `/lite-youtube-embed.css` without the print-to-all trick.
+  - `public/lite-youtube-embed.css` — enforce full overlay and resilient background image on `.lty-playbtn`.
+- **Verification**: Hard refresh keeps the red YouTube play icon centred on the thumbnail; clicking anywhere on the video area activates playback. No console warnings.
+
+#### 🎯 Timeline Alignment Fix (February 2025)
+
+✅ **Problem Solved**: How It Works timeline icons perfectly aligned with feature cards above
+
+- **Issue Description**: 
+  - The three timeline icons in the progress rail were misaligned with the three feature cards above them
+  - Icons used absolute percentage positioning (16.67%, 50%, 83.33%) that ignored the grid gaps
+  - Connector line didn't pass through the centres of the icons
+
+- **Root Cause Analysis**:
+  - Feature cards used `grid-cols-3 gap-12` layout with column gaps
+  - Timeline rail used absolute positioning that assumed no gaps
+  - With gaps, actual column centres are at: T/2, 1.5T + G, 2.5T + 2G (where T = column width, G = gap)
+  - Percentage positions (16.67%, 50%, 83.33%) don't account for gap spacing
+
+- **Solution Implemented**:
+  - Replaced absolute percentage positioning with **same grid structure as cards above**
+  - Timeline now uses `grid-cols-3 gap-12` to match feature cards exactly
+  - Icons positioned with `flex justify-center` in each grid column for automatic centre alignment
+  - Connector line spans between column centres using three separate line segments:
+    - First column: line extends from centre to right edge
+    - Middle column: line spans full width
+    - Last column: line extends from left edge to centre
+  - Labels use identical grid structure for consistent alignment
+
+- **Technical Benefits**:
+  - **Perfect alignment**: Icons sit exactly under card centres at all breakpoints
+  - **Responsive robust**: Works with any grid gap size or content changes
+  - **No manual calculations**: Grid system handles positioning automatically
+  - **Future-proof**: Survives copy changes without manual offset adjustments
+
+- **Files Updated**:
+  - `src/app/extractor-table/page.jsx` — replaced absolute positioning with grid-based layout in HowItWorks component
+
+- **Verification**: Timeline icons now perfectly align with feature cards above at all large breakpoints, with connector line passing through icon centres
+
+
 ## Conclusion
 
 ### Original Implementation (Phase 1-5)
