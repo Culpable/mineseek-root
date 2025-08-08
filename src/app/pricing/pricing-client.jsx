@@ -188,7 +188,7 @@ function PricingCard({ tier }) {
             )}
           </div>
           <div className="mt-8">
-            <Button href={tier.href}>Book a Demo</Button>
+            <Button href={tier.href}>Book a demo</Button>
           </div>
           <div className="mt-8">
             <h3 className="text-sm/6 font-medium text-gray-950">
@@ -271,13 +271,13 @@ function PricingTable({ selectedTier }) {
             </td>
             <td colSpan={3} className="p-0 text-right">
               <Button variant="outline" href={selectedTier.href}>
-                Book a Demo
+                Book a demo
               </Button>
             </td>
           </tr>
           <tr className="max-sm:hidden">
             <th className="p-0" scope="row">
-              <span className="sr-only">Book a Demo</span>
+              <span className="sr-only">Book a demo</span>
             </th>
             {tiers.map((tier) => (
               <td
@@ -286,7 +286,7 @@ function PricingTable({ selectedTier }) {
                 className="px-0 pb-0 pt-4 data-[selected]:table-cell max-sm:hidden"
               >
                 <Button variant="outline" href={tier.href}>
-                  Book a Demo
+                  Book a demo
                 </Button>
               </td>
             ))}

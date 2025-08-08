@@ -10,7 +10,7 @@ function CallToAction() {
   return (
     <div className="relative pb-16 pt-20 text-center sm:py-24">
       <hgroup>
-        <Subheading>Book a Demo</Subheading>
+        <Subheading>Book a demo</Subheading>
         <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
           Ready to experience the future of exploration?
           {/* <br />
@@ -23,7 +23,7 @@ function CallToAction() {
       </p>
       <div className="mt-8">
         <Button className="w-full sm:w-auto" href="/contact">
-          Book a Demo
+          Book a demo
         </Button>
       </div>
     </div>

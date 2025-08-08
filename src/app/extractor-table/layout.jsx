@@ -1,25 +1,25 @@
 import { siteMetadata } from '@/lib/metadata'
 
 export const metadata = {
-  title: 'Extractor Table Demo | Mine Seek',
-  description: 'Watch how Mine Seek\'s AI-powered Extractor Table transforms unstructured geological data into actionable insights in seconds.',
+  title: 'Extractor Grid Demo | Mine Seek',
+  description: 'See how Mine Seek’s Extractor Grid turns geological PDFs into clean, export‑ready tables with evidence and confidence.',
   openGraph: {
-    title: 'Extractor Table Demo | Mine Seek',
-    description: 'Watch how Mine Seek\'s AI-powered Extractor Table transforms unstructured geological data into actionable insights in seconds.',
+    title: 'Extractor Grid Demo | Mine Seek',
+    description: 'See how Mine Seek’s Extractor Grid turns geological PDFs into clean, export‑ready tables with evidence and confidence.',
     images: [
       {
         url: siteMetadata.ogImage,
         width: 1200,
         height: 630,
-        alt: 'Mine Seek Extractor Table Demo',
+        alt: 'Mine Seek Extractor Grid Demo',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: siteMetadata.twitter.cardType,
-    title: 'Extractor Table Demo | Mine Seek',
-    description: 'Watch how Mine Seek\'s AI-powered Extractor Table transforms unstructured geological data into actionable insights in seconds.',
+    title: 'Extractor Grid Demo | Mine Seek',
+    description: 'See how Mine Seek’s Extractor Grid turns geological PDFs into clean, export‑ready tables with evidence and confidence.',
     images: [siteMetadata.ogImage],
   },
 }

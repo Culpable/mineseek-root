@@ -16,7 +16,7 @@ const links = [
   { href: '/pricing', label: 'Pricing' },
   { href: '/company', label: 'Company' },
   { href: 'https://app.mineseek.com.au/', label: 'Login' },
-  { href: '/contact', label: 'Book a Demo' },
+  { href: '/contact', label: 'Book a demo' },
 ]
 
 function DesktopNav() {
@@ -24,13 +24,13 @@ function DesktopNav() {
     <nav className="relative hidden lg:flex">
       {links.map(({ href, label }) => (
         <PlusGridItem key={href} className="relative flex">
-          {label === 'Book a Demo' ? (
+          {label === 'Book a demo' ? (
             <Link
               href={href}
               className="flex items-center px-2 py-3"
             >
               <div className="rounded-full px-4 py-2 bg-black text-white hover:bg-gray-800 transition">
-                <span className="text-sm font-medium">{label}</span>
+                <span className="text-[15px] font-medium">{label}</span>
               </div>
             </Link>
           ) : (
@@ -73,7 +73,7 @@ function MobileNav() {
             }}
             key={href}
           >
-            {label === 'Book a Demo' ? (
+            {label === 'Book a demo' ? (
               <>
                 {/* V1: Centered button */}
                 {/* <div className="mx-auto max-w-fit">

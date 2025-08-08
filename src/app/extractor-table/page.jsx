@@ -9,11 +9,16 @@ import { Heading, Subheading } from '@/components/text'
 import { BentoCard } from '@/components/bento-card'
 import { 
   ClipboardDocumentCheckIcon,
-  ChartBarIcon,
+  TableCellsIcon,
   DocumentMagnifyingGlassIcon,
   SparklesIcon,
-  BoltIcon,
-  CloudArrowDownIcon
+  CloudArrowDownIcon,
+  ArrowUpTrayIcon,
+  ArrowDownTrayIcon,
+  PencilIcon,
+  QuestionMarkCircleIcon,
+  PencilSquareIcon,
+  BoltIcon
 } from '@heroicons/react/24/solid'
 import LiteYouTubeEmbed from './LiteYouTubeEmbed'
 
@@ -28,10 +33,10 @@ function VideoHero() {
           <div className="text-center">
             <Subheading>DEMO</Subheading>
             <h1 className="mt-2 font-display text-balance text-5xl/[0.9] font-medium tracking-tight text-gray-950 sm:text-7xl/[0.8] md:text-7xl/[0.8]">
-              The Extractor Table
+              The Extractor Grid
             </h1>
             <p className="mx-auto mt-8 max-w-2xl text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-              Transform unstructured geological data into structured insights with AI-powered extraction.
+              Turn geological PDFs into clean, export‑ready tables—ready to import into your tool of choice.
             </p>
           </div>
 
@@ -42,8 +47,8 @@ function VideoHero() {
                 <div className="aspect-video w-full">
                   <LiteYouTubeEmbed 
                     videoid="qGk6nN2uFWg" 
-                    title="Mine Seek Extractor Table Demo"
-                    playlabel="Play demonstration video: Watch how Mine Seek transforms geological data"
+                    title="Mine Seek Extractor Grid Demo"
+                    playlabel="Play demonstration video: See how Extractor Grid structures geological data"
                     params="controls=1&modestbranding=2&enablejsapi=1"
                     jsApi={true}
                     style={{ backgroundImage: 'url(/screenshots/extractor-table.png)' }}
@@ -55,9 +60,9 @@ function VideoHero() {
 
           {/* CTA Buttons */}
           <div className="mt-12 flex flex-col items-center gap-x-6 gap-y-4 sm:flex-row sm:justify-center">
-            <Button href="/contact">Book a Demo</Button>
+            <Button href="/contact">Book a demo</Button>
             <Button variant="secondary" href="/pricing">
-              See Pricing
+              See pricing
             </Button>
           </div>
         </div>
@@ -68,36 +73,53 @@ function VideoHero() {
 
 function KeyFeatures() {
   const features = [
+    // Existing six (with improved copy where requested)
     {
       icon: DocumentMagnifyingGlassIcon,
-      title: 'Smart Data Recognition',
-      description: 'Automatically identifies and extracts key geological data from PDFs, reports, and unstructured documents.'
+      title: 'Advanced Field Detection',
+      description: 'Pinpoints drill hole collars, downhole surveys, and lithology logs buried in complex technical reports.'
     },
     {
-      icon: ChartBarIcon,
-      title: 'Instant Structuring',
-      description: 'Converts raw data into organised tables with proper categorisation and standardised formats.'
+      icon: TableCellsIcon,
+      title: 'Intelligent Schema Mapping',
+      description: 'Converts PDFs into drill-ready spreadsheets with standardised columns for depths, azimuths, and grades.'
     },
     {
       icon: SparklesIcon,
-      title: 'AI-Powered Insights',
-      description: 'Leverages advanced AI to understand context and extract meaningful patterns from your data.'
+      title: 'AI‑Powered Insights',
+      description: 'Reads surrounding text to infer units, formations, and methods, reducing errors and hallucinations.'
     },
     {
       icon: CloudArrowDownIcon,
       title: 'Export Ready',
-      description: 'Export your structured data to Excel, CSV, or integrate directly with your existing systems.'
+      description: 'One‑click export to industry formats—CSV, Excel, and GIS for Leapfrog, Micromine, and Surpac.'
     },
     {
-      icon: BoltIcon,
-      title: 'Lightning Fast',
-      description: 'Process hundreds of documents in minutes, not days. 100x faster than manual extraction.'
+      icon: PencilIcon,
+      title: 'Understands Handwritten Notes',
+      description: 'Deciphers field notes, hand‑logged intervals, and annotated maps from decades of exploration.'
     },
     {
-      icon: ClipboardDocumentCheckIcon,
-      title: 'Quality Assured',
-      description: 'Built-in validation ensures data accuracy with confidence scores for every extraction.'
-    }
+      icon: QuestionMarkCircleIcon,
+      title: 'On‑Demand Answers',
+      description: 'Ask plain‑English questions across your documents to get accurate answers in seconds.'
+    },
+    // TODO: Add back in
+    // {
+    //   icon: BoltIcon,
+    //   title: 'Lightning Fast',
+    //   description: 'Process hundreds of documents in minutes—100× faster than manual extraction.'
+    // },
+    // {
+    //   icon: ClipboardDocumentCheckIcon,
+    //   title: 'Quality Assured',
+    //   description: 'Built‑in validation ensures data accuracy with confidence scores for every extraction.'
+    // },
+    // {
+    //   icon: PencilSquareIcon,
+    //   title: 'Human‑in‑the‑loop Controls',
+    //   description: 'Rerun a row, edit results, or clear and try again—balance automation with expert review.'
+    // }
   ]
 
   return (
@@ -106,7 +128,7 @@ function KeyFeatures() {
         <div className="text-center">
           <Subheading>FEATURES</Subheading>
           <Heading as="h2" className="mt-2 max-w-3xl mx-auto">
-            Everything you need to transform your data
+            Everything you need to structure your geology data
           </Heading>
         </div>
 
@@ -144,42 +166,140 @@ function HowItWorks() {
         <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-3">
           <div className="text-center">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/10 text-white">
-              <span className="text-2xl font-bold">1</span>
+              <ArrowUpTrayIcon className="h-8 w-8" />
             </div>
             <h3 className="mt-6 text-xl font-semibold text-white">
-              Upload Your Documents
+              Upload your PDFs
             </h3>
             <p className="mt-4 text-gray-400">
-              Simply drag and drop your geological reports, PDFs, or any unstructured data files into the Extractor Table.
+              Simply drag and drop any report. Digital or scanned, modern or historical—we handle them all.
             </p>
           </div>
 
           <div className="text-center">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/10 text-white">
-              <span className="text-2xl font-bold">2</span>
+              <SparklesIcon className="h-8 w-8" />
             </div>
             <h3 className="mt-6 text-xl font-semibold text-white">
-              AI Processes & Extracts
+              AI extracts every record
             </h3>
             <p className="mt-4 text-gray-400">
-              Our AI agents analyse your documents, understanding context and extracting relevant geological data automatically.
+              Our custom AI agents transform your documents into a clean schema based on your desired format.
             </p>
           </div>
 
           <div className="text-center">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/10 text-white">
-              <span className="text-2xl font-bold">3</span>
+              <ArrowDownTrayIcon className="h-8 w-8" />
             </div>
             <h3 className="mt-6 text-xl font-semibold text-white">
-              Get Structured Results
+              Ready to use
             </h3>
             <p className="mt-4 text-gray-400">
-              Receive clean, structured data tables ready for analysis, complete with validation scores and export options.
+              Your data is now correctly formatted and ready to use in modelling and analysis.
             </p>
+          </div>
+        </div>
+
+        {/* Progress rail - uses same grid structure as cards above for perfect alignment */}
+        <div className="mt-12 hidden lg:block">
+          {/* Icons and connecting line */}
+          <div className="grid grid-cols-3 gap-12">
+            {/* First column with icon and line start */}
+            <div className="relative flex justify-center">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-800 ring-1 ring-white/20 z-10">
+                <ArrowUpTrayIcon className="h-4 w-4 text-white" />
+              </div>
+              {/* Line extends from center to right edge of column */}
+              <div className="absolute left-1/2 right-0 top-1/2 h-px -translate-y-1/2 bg-white/10" />
+            </div>
+            
+            {/* Middle column with icon and line through */}
+            <div className="relative flex justify-center">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-800 ring-1 ring-white/20 z-10">
+                <SparklesIcon className="h-4 w-4 text-white" />
+              </div>
+              {/* Line extends through entire column */}
+              <div className="absolute left-0 right-0 top-1/2 h-px -translate-y-1/2 bg-white/10" />
+            </div>
+            
+            {/* Last column with icon and line end */}
+            <div className="relative flex justify-center">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-800 ring-1 ring-white/20 z-10">
+                <ArrowDownTrayIcon className="h-4 w-4 text-white" />
+              </div>
+              {/* Line extends from left edge to center of column */}
+              <div className="absolute left-0 right-1/2 top-1/2 h-px -translate-y-1/2 bg-white/10" />
+            </div>
+          </div>
+
+          {/* Labels in same grid structure */}
+          <div className="mt-3 grid grid-cols-3 gap-12 text-center text-white/80">
+            <span className="text-sm">Upload</span>
+            <span className="text-sm">Extract</span>
+            <span className="text-sm">Export</span>
           </div>
         </div>
       </Container>
     </div>
+  )
+}
+
+function TemplateLibrary() {
+  const templates = [
+    {
+      eyebrow: 'Template',
+      title: 'Stratigraphic Intervals',
+      description: 'Extract complete stratigraphy intervals in one pass with mapped headers.'
+    },
+    {
+      eyebrow: 'Template',
+      title: 'Lithology Intervals',
+      description: 'Capture lithology descriptions and depths as clean rows.'
+    },
+    {
+      eyebrow: 'Template',
+      title: 'Collar Information',
+      description: 'Pull hole ID, project name, and location fields consistently.'
+    },
+    {
+      eyebrow: 'Template',
+      title: 'Survey Information',
+      description: 'Standardise survey measurements and metadata.'
+    },
+    {
+      eyebrow: 'Template',
+      title: 'Mineralisation Intervals',
+      description: 'Extract mineralisation with depths and grades at scale.'
+    },
+    {
+      eyebrow: 'Template',
+      title: 'Alteration Zones',
+      description: 'Extract hydrothermal alteration zones and assemblages from drill logs.'
+    },
+  ]
+
+  return (
+    <Container className="py-24">
+      <div className="mx-auto max-w-4xl text-center">
+        <Subheading>TEMPLATES</Subheading>
+        <Heading as="h2" className="mt-2">
+          Template library for geology
+        </Heading>
+      </div>
+
+      <div className="mt-16 grid grid-cols-1 gap-8 text-left sm:grid-cols-2 lg:grid-cols-3">
+        {templates.map((t, i) => (
+          <BentoCard
+            key={i}
+            eyebrow={t.eyebrow}
+            title={t.title}
+            description={t.description}
+            className="rounded-2xl"
+          />
+        ))}
+      </div>
+    </Container>
   )
 }
 
@@ -236,7 +356,7 @@ function CallToAction() {
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Button href="/contact" className="bg-white text-gray-900 hover:bg-gray-100">
-              Book Your Demo
+              Book a demo
             </Button>
             <Button 
               variant="outline" 
@@ -252,15 +372,16 @@ function CallToAction() {
   )
 }
 
-export default function ExtractorTableDemo() {
+export default function ExtractorGridDemo() {
   return (
     <div className="overflow-hidden">
       <GradientBackground />
       <VideoHero />
       <main>
         <KeyFeatures />
+        {/* <TemplateLibrary /> */} {/* TODO: Add back in */}
         <HowItWorks />
-        <UseCases />
+        {/* <UseCases /> */} {/* TODO: Add back in */}  
       </main>
       <Footer />
     </div>

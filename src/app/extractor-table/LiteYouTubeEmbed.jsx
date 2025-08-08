@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import Script from 'next/script'
 
 export default function LiteYouTubeEmbed({ 
   videoid, 
@@ -104,12 +103,10 @@ export default function LiteYouTubeEmbed({
 
   return (
     <>
-      {/* Progressive enhancement: load CSS asynchronously */}
+      {/* Load CSS immediately to avoid Tailwind resets hiding the play icon */}
       <link 
         rel="stylesheet" 
         href="/lite-youtube-embed.css" 
-        media="print" 
-        onLoad="this.media='all'; this.onload=null;"
       />
       
       {/* Container with fallback markup */}
