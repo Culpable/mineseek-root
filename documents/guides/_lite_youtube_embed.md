@@ -111,3 +111,4 @@ flowchart TD
 ## References
 
 - Upstream project and usage notes: [lite‑youtube‑embed](https://github.com/paulirish/lite-youtube-embed)
+- YouTube Player Parameter (used in `params`): [Parameters](https://developers.google.com/youtube/player_parameters#Parameters)
