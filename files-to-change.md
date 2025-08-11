@@ -15,7 +15,7 @@ Location: `/src/app/`
    - Subtext: "Radiant helps you sell more by revealing sensitive information about your customers."
    - CTAs: 
      - Primary: "Get started"
-     - Secondary: "See pricing"
+     - Secondary: "See e e pricing"
    ```
 
 3. Feature Sections:
