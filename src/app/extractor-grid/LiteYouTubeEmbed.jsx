@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import analytics from '@/lib/analytics'
 
 export default function LiteYouTubeEmbed({ 
   videoid, 
@@ -15,6 +16,7 @@ export default function LiteYouTubeEmbed({
   const [isLoaded, setIsLoaded] = useState(false)
   const [scriptLoaded, setScriptLoaded] = useState(false)
   const containerRef = useRef(null)
+  const hasTrackedPlayRef = useRef(false)
 
   // Progressive enhancement: defer script loading until component mounts
   useEffect(() => {
@@ -75,6 +77,20 @@ export default function LiteYouTubeEmbed({
           ${style.backgroundImage ? `background-image: ${style.backgroundImage};` : ''}
         `
         
+        // Track first user interaction that triggers playback
+        liteYoutube.addEventListener('pointerdown', () => {
+          if (!hasTrackedPlayRef.current) {
+            hasTrackedPlayRef.current = true
+            analytics.trackVideoPlay(videoid, {
+              title: title || undefined,
+              provider: 'youtube',
+              location: 'extractor-grid',
+              page: typeof window !== 'undefined' ? window.location.pathname : undefined,
+              component: 'LiteYouTubeEmbed'
+            })
+          }
+        }, { once: true })
+
         containerRef.current.appendChild(liteYoutube)
       }
     }
@@ -99,7 +115,7 @@ export default function LiteYouTubeEmbed({
     if (containerRef.current) {
       containerRef.current.getYTPlayer = getYTPlayer
     }
-  }, [isLoaded, jsApi])
+  }, [isLoaded, jsApi, getYTPlayer])
 
   return (
     <>

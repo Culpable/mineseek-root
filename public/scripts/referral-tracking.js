@@ -57,6 +57,16 @@
             )
         );
     }
+    
+    // Function to check if the in-app browser is LinkedIn
+    function isLinkedInApp() {
+        try {
+            const userAgent = navigator.userAgent.toLowerCase();
+            return userAgent.includes('linkedin');
+        } catch (e) {
+            return false;
+        }
+    }
 
     // Determine referral source
     let referralSource = 'Direct or Other';
@@ -64,6 +74,7 @@
     const fbclid = getQueryParam('fbclid');
     const utmSource = getQueryParam('utm_source');
     const liclid = getQueryParam('liclid'); // LinkedIn click identifier
+    const liFatId = getQueryParam('li_fat_id'); // LinkedIn’s click identifier (Campaign Manager)
     
     // Additional parameters to capture for Google Ads
     const campaignId = getQueryParam('campaign');
@@ -75,7 +86,7 @@
 
     if (fbclid) {
         referralSource = 'Facebook';
-    } else if (liclid) {
+    } else if (liclid || liFatId) {
         referralSource = 'LinkedIn';
     } else if (utmSource) {
         const normalisedUtmSource = utmSource.toLowerCase();
@@ -108,7 +119,7 @@
             referralSource = 'Perplexity';
         } else if (normalisedUtmSource === 'deepseek.com') {
             referralSource = 'DeepSeek';
-        } else if (normalisedUtmSource === 'linkedin' || normalisedUtmSource === 'linkedin.com') {
+        } else if (normalisedUtmSource === 'linkedin' || normalisedUtmSource === 'linkedin.com' || normalisedUtmSource === 'lnkd.in') {
             referralSource = 'LinkedIn';
         } else {
             referralSource = normalisedUtmSource;
@@ -119,7 +130,7 @@
         referralSource = 'Google';
     } else if (isBingSource()) {
         referralSource = 'Bing';
-    } else if (isLinkedInSource()) {
+    } else if (isLinkedInSource() || isLinkedInApp()) {
         referralSource = 'LinkedIn';
     } // No need for an else here as 'Direct or Other' is already set by default
 
@@ -142,7 +153,37 @@
                 Object.assign(trackingData, additionalReferralData);
             }
             
+            // Track the referral identification as an event for analytics
             window.mixpanel.track('Referral Source Identified', trackingData);
+
+            // Also persist the initial referral details to the user profile using set_once
+            // so it is captured only the first time we see this user.
+            try {
+                // Ensure the user has a distinct id and is identified before setting people properties
+                if (typeof window.mixpanel.get_distinct_id === 'function') {
+                    const distinctId = window.mixpanel.get_distinct_id();
+                    if (distinctId) {
+                        window.mixpanel.identify(distinctId);
+                    }
+                }
+
+                // Prepare initial profile properties (set_once so they are immutable first-touch values)
+                const initialProfileProps = { 'Initial Referral Source': referralSource };
+                if (referringDomain) {
+                    initialProfileProps['Initial Referring Domain'] = referringDomain;
+                }
+
+                if (window.mixpanel.people && typeof window.mixpanel.people.set_once === 'function') {
+                    window.mixpanel.people.set_once(initialProfileProps);
+                }
+
+                // Optionally register_once as super properties to attach to all future events automatically
+                if (typeof window.mixpanel.register_once === 'function') {
+                    window.mixpanel.register_once(initialProfileProps);
+                }
+            } catch (e) {
+                // Fail silently to avoid impacting user experience if Mixpanel people API is unavailable
+            }
         } else if (attempts < maxAttempts) {
             // Retry after a short delay
             setTimeout(trackReferralSource, interval);

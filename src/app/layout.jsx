@@ -140,6 +140,13 @@ export default function RootLayout({ children }) {
         }}
       />
       
+      {/* Referral source classification script (sitewide) */}
+      <Script
+        id="referral-tracking"
+        src="/scripts/referral-tracking.js"
+        strategy="afterInteractive"
+      />
+      
       <body className="text-gray-950 antialiased">
         <MixpanelProvider />
         {children}

@@ -17,6 +17,20 @@ const analytics = {
   },
 
   /**
+   * Track when a user starts playing a video
+   * @param {string} videoId - Unique identifier for the video (e.g., YouTube id)
+   * @param {Object} properties - Additional context such as title, location, and page
+   */
+  trackVideoPlay: (videoId, properties = {}) => {
+    if (typeof window !== 'undefined') {
+      mixpanel.track('Video Play', {
+        video_id: videoId,
+        ...properties
+      });
+    }
+  },
+
+  /**
    * Track form submission events
    * @param {string} formName - Name of the form
    * @param {Object} formData - Form data being submitted
