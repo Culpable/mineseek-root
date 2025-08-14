@@ -15,7 +15,7 @@ import { Screenshot } from '@/components/screenshot'
 import { Testimonials } from '@/components/testimonials'
 import { Heading, Subheading } from '@/components/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
-import Script from 'next/script'
+
 import { organizationSchema } from '@/schemas/organization-schema'
 import { siteMetadata } from '@/lib/metadata'
 
@@ -228,7 +228,7 @@ function DarkBentoSection() {
 export default function Home() {
   return (
     <div className="overflow-hidden">
-      <Script
+      <script
         id="organization-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
