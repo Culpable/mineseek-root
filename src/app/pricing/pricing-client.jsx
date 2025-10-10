@@ -47,7 +47,7 @@ const tiers = [
       { section: 'Analysis', name: 'Map visualisation', value: 'Standard' },
       { section: 'Analysis', name: 'Field notes digitisation', value: false },
       { section: 'Support', name: 'Email support', value: true },
-      { section: 'Support', name: 'In-House Training', value: false },
+      { section: 'Support', name: 'In-house training', value: false },
     ],
   },
   {
@@ -78,7 +78,7 @@ const tiers = [
       { section: 'Analysis', name: 'Map visualisation', value: 'Interactive' },
       { section: 'Analysis', name: 'Field notes digitisation', value: false },
       { section: 'Support', name: 'Email support', value: true },
-      { section: 'Support', name: 'In-House Training', value: false },
+      { section: 'Support', name: 'In-house training', value: false },
     ],
   },
   {
@@ -112,7 +112,6 @@ const tiers = [
       { section: 'Analysis', name: 'Field notes digitisation', value: true },
       { section: 'Support', name: 'Dedicated support', value: true },
       { section: 'Support', name: 'Email support', value: true },
-      { section: 'Support', name: 'In-House Training', value: true },
       { section: 'Support', name: 'In-house training', value: true },
     ],
   },
