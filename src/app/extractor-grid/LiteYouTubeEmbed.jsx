@@ -61,7 +61,7 @@ export default function LiteYouTubeEmbed({
         liteYoutube.setAttribute('playlabel', playlabel || `Play Video: ${title}` || 'Play Video')
         
         // Player parameters for optimal UX
-        const defaultParams = 'modestbranding=1&rel=0&start=0rel=0'
+        const defaultParams = 'modestbranding=1&rel=0&start=0'
         const finalParams = params ? `${defaultParams}&${params}` : defaultParams
         liteYoutube.setAttribute('params', finalParams)
         
