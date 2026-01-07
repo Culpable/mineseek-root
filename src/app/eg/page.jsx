@@ -1,6 +1,9 @@
+import { pageMetadata } from '@/lib/metadata'
+
 export const metadata = {
-  title: 'Redirecting to Extractor Grid - Mine Seek',
-};
+  title: pageMetadata.egRedirect.title,
+  description: pageMetadata.egRedirect.description,
+}
 
 export default function EgRedirectPage() {
   return (

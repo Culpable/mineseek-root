@@ -5,10 +5,11 @@ import { Mark } from '@/components/logo'
 import { Checkbox, Field, Input, Label } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/16/solid'
 import { clsx } from 'clsx'
+import { pageMetadata } from '@/lib/metadata'
 
 export const metadata = {
-  title: 'Login',
-  description: 'Sign in to your account to continue.',
+  title: pageMetadata.login.title,
+  description: pageMetadata.login.description,
 }
 
 export default function Login() {

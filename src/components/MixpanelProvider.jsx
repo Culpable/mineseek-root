@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation';
 import { initMixpanel } from '@/lib/mixpanelClient';
 import mixpanel from '@/lib/mixpanelClient';
 
+const isDevelopment = process.env.NODE_ENV === 'development';
+
 /**
  * Client component that initializes Mixpanel with Session Replay
  * Removed useSearchParams dependency to fix build errors
@@ -14,7 +16,9 @@ export default function MixpanelProvider() {
 
   // Initialize Mixpanel once on component mount
   useEffect(() => {
-    console.log('Initializing Mixpanel with Session Replay...');
+    if (!isDevelopment) {
+      console.log('Initializing Mixpanel with Session Replay...');
+    }
     initMixpanel();
     // Flag is now set in initMixpanel
   }, []);
@@ -22,6 +26,9 @@ export default function MixpanelProvider() {
   // Track page views whenever the pathname changes
   // Note: We're no longer tracking query parameters to avoid build errors
   useEffect(() => {
+    if (isDevelopment) {
+      return;
+    }
     if (pathname) {
       // Track the page view without search params
       mixpanel.track('Page View', { 

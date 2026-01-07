@@ -5,10 +5,11 @@ import { ContactDetails } from './contact-details'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { GradientBackground } from '@/components/gradient'
+import { pageMetadata } from '@/lib/metadata'
 
 export const metadata = {
-  title: 'Contact Us',
-  description: 'Ready to transform your mining exploration with AI? Contact us to see how we can accelerate your geological analysis and discovery process.',
+  title: pageMetadata.contact.title,
+  description: pageMetadata.contact.description,
 }
 
 export default function Contact() {

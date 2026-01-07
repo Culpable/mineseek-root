@@ -1,5 +1,7 @@
 import mixpanel from './mixpanelClient';
 
+const isDevelopment = process.env.NODE_ENV === 'development';
+
 /**
  * Analytics utility functions for tracking user interactions
  * Provides a consistent interface for event tracking throughout the application
@@ -11,6 +13,9 @@ const analytics = {
    * @param {Object} properties - Additional event properties
    */
   track: (eventName, properties = {}) => {
+    if (isDevelopment) {
+      return;
+    }
     if (typeof window !== 'undefined') {
       mixpanel.track(eventName, properties);
     }
@@ -22,6 +27,9 @@ const analytics = {
    * @param {Object} properties - Additional context such as title, location, and page
    */
   trackVideoPlay: (videoId, properties = {}) => {
+    if (isDevelopment) {
+      return;
+    }
     if (typeof window !== 'undefined') {
       mixpanel.track('Video Play', {
         video_id: videoId,
@@ -36,6 +44,9 @@ const analytics = {
    * @param {Object} formData - Form data being submitted
    */
   trackFormSubmission: (formName, formData = {}) => {
+    if (isDevelopment) {
+      return;
+    }
     if (typeof window !== 'undefined') {
       mixpanel.track('Form Submitted', {
         form_name: formName,
@@ -50,6 +61,9 @@ const analytics = {
    * @param {Object} properties - Additional properties
    */
   trackButtonClick: (buttonName, properties = {}) => {
+    if (isDevelopment) {
+      return;
+    }
     if (typeof window !== 'undefined') {
       mixpanel.track('Button Clicked', {
         button_name: buttonName,

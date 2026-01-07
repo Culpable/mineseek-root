@@ -2,6 +2,12 @@
 
 This guide explains how to integrate Mixpanel analytics with Session Replay functionality into a Next.js project using the App Router architecture.
 
+## Current Implementation Notes (This Repo)
+
+- The Mixpanel token is hardcoded in `src/lib/mixpanelClient.js`.
+- Mixpanel is disabled in development - it only initializes in production builds.
+- A `window.mixpanelDisabled` flag is set in development for visibility.
+
 ## Overview
 
 This integration provides:
@@ -81,7 +87,7 @@ export const initMixpanel = () => {
 export default mixpanel;
 ```
 
-**Note**: While the token is currently hardcoded, it's recommended to use environment variables for better security:
+**Optional**: If you want to switch to environment variables, update the client to read from `process.env.NEXT_PUBLIC_MIXPANEL_TOKEN`:
 ```javascript
 const MIXPANEL_TOKEN = process.env.NEXT_PUBLIC_MIXPANEL_TOKEN || '187560cd6dae284087bd43a242bde46e';
 ```
@@ -334,14 +340,16 @@ To protect sensitive data:
 
 ## Best Practices
 
+Items marked Optional are not implemented in this repo.
+
 1. **Use the analytics wrapper**: Prefer using `analytics` from `@/lib/analytics` for consistent event naming and structure
 
-2. **Environment-based configuration**: Consider moving the hardcoded token to environment variables:
+2. **Optional - Environment-based configuration**: Consider moving the hardcoded token to environment variables:
    ```javascript
    const MIXPANEL_TOKEN = process.env.NEXT_PUBLIC_MIXPANEL_TOKEN;
    ```
 
-3. **Conditional initialization**: Only initialize in production:
+3. **Optional - Conditional initialization**: Only initialize in production:
    ```javascript
    if (process.env.NODE_ENV === 'production') {
      initMixpanel();
@@ -364,9 +372,9 @@ To protect sensitive data:
 
 4. **Referral tracking not working**: Verify that `referral-tracking.js` is loaded and check for the `mixpanelLoaded` flag in console
 
-### Debug Mode
+### Debug Mode (Optional)
 
-Enable debug mode during development:
+Debug mode is not enabled by default. To enable it during development:
 
 ```javascript
 mixpanel.init(MIXPANEL_TOKEN, {

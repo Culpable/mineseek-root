@@ -5,11 +5,11 @@ import { Footer } from '@/components/footer'
 import { GradientBackground } from '@/components/gradient'
 import { Navbar } from '@/components/navbar'
 import { Heading, Lead, Subheading } from '@/components/text'
+import { pageMetadata } from '@/lib/metadata'
 
 export const metadata = {
-  title: 'Company',
-  description:
-    "We're on a mission to transform mining exploration by harnessing the power of AI and advanced data analysis.",
+  title: pageMetadata.company.title,
+  description: pageMetadata.company.description,
 }
 
 function Header() {

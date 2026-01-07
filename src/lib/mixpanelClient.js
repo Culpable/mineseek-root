@@ -2,6 +2,7 @@ import mixpanel from 'mixpanel-browser';
 
 // Hardcoded token instead of using environment variables
 const MIXPANEL_TOKEN = '187560cd6dae284087bd43a242bde46e';
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 /**
  * Initialize Mixpanel with hardcoded token and Session Replay configuration
@@ -14,6 +15,15 @@ const MIXPANEL_TOKEN = '187560cd6dae284087bd43a242bde46e';
  * - Heatmap data collection enabled for click tracking
  */
 export const initMixpanel = () => {
+  if (isDevelopment) {
+    if (typeof window !== 'undefined') {
+      window.mixpanelLoaded = false;
+      window.mixpanelDisabled = true;
+    }
+    console.info('Mixpanel disabled in development environment.');
+    return;
+  }
+
   mixpanel.init(MIXPANEL_TOKEN, {
     track_pageview: true,
     persistence: 'localStorage', // Only set this to 'cookie' if using cross-subdomain tracking

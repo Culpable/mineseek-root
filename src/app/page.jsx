@@ -17,30 +17,13 @@ import { Heading, Subheading } from '@/components/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
 
 import { organizationSchema } from '@/schemas/organization-schema'
-import { siteMetadata } from '@/lib/metadata'
+import { pageMetadata } from '@/lib/metadata'
 
 export const metadata = {
-  description:
-    "Mine Seek accelerates your path from data to discovery with AI-powered exploration agents. Custom made for Australian mining exploration teams.",
-  openGraph: {
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    images: [
-      {
-        url: siteMetadata.ogImage,
-        width: 1200,
-        height: 630,
-        alt: 'Mine Seek: AI-Powered Mining Exploration',
-      },
-    ],
-    type: 'website',
+  title: {
+    absolute: pageMetadata.home.title,
   },
-  twitter: {
-    card: siteMetadata.twitter.cardType,
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    images: [siteMetadata.ogImage],
-  },
+  description: pageMetadata.home.description,
 }
 
 function Hero() {

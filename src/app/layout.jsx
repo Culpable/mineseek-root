@@ -4,6 +4,7 @@ import Script from 'next/script'
 import { googleAdsScript } from '@/scripts/google-ads'
 import { linkedinTrackingScript } from '@/scripts/linkedin-tracking'
 import MixpanelProvider from '@/components/MixpanelProvider'
+import { siteMetadata } from '@/lib/metadata'
 
 // Load Switzer font files locally for optimal performance
 const switzer = localFont({
@@ -78,10 +79,32 @@ const switzer = localFont({
 export const metadata = {
   title: {
     template: '%s | Mine Seek',
-    default: 'Mine Seek: Accelerate Your Exploration with AI',
+    default: siteMetadata.title,
   },
-  description:
-    'Mine Seek is helping exploration teams across Australia radically accelerate their geological analysis through AI-powered insights. Find out how agentic AI revolutionises exploration.',
+  description: siteMetadata.description,
+  openGraph: {
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+    url: siteMetadata.siteUrl,
+    siteName: siteMetadata.name,
+    images: [
+      {
+        url: siteMetadata.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteMetadata.title,
+      },
+    ],
+    locale: siteMetadata.locale,
+    type: 'website',
+  },
+  twitter: {
+    card: siteMetadata.twitter.cardType,
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+    images: [siteMetadata.ogImage],
+  },
+  metadataBase: new URL(siteMetadata.siteUrl),
   icons: {
     icon: [
       { url: '/favicon.ico', type: 'image/x-icon', sizes: '32x32' },
