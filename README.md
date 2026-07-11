@@ -25,20 +25,25 @@ source ~/.zshrc  # or source ~/.bash_profile
 ```
 
 ### Node.js
-Required version: v22.11.0
+
+Required version: v22.17.0
+
 - Version specified in `.nvmrc`
-- While in project directory, install correct version: `nvm install` and switch to installed version: `nvm use`
+- `package.json` and `package-lock.json` require the same exact version
+- `.npmrc` rejects dependency installation under a different Node.js version
+- Development, build, and test commands run a dependency-free runtime check before starting
 
 ## Getting started
 
 1. Clone the repository
-2. Set Node version:
+2. Install and activate the required Node.js version:
    ```bash
+   nvm install
    nvm use
    ```
 3. Install dependencies:
    ```bash
-   npm install
+   npm ci
    ```
 4. Start development server:
    ```bash
@@ -56,12 +61,14 @@ git push origin main
 ```
 
 **Automated deployment process:**
+
 1. GitHub Actions runner starts on Ubuntu latest
-2. Sets up Node.js environment (v20.10.0)
+2. Sets up Node.js v22.17.0 from `.nvmrc`
 3. Installs dependencies using `npm ci`
-4. Builds static site using `npm run build`
-5. Deploys built files to `gh-pages` branch using `peaceiris/actions-gh-pages`
-6. Configures custom domain (mineseek.com.au) via CNAME
+4. Runs linting, type checks, and the test suite
+5. Builds static site using `npm run build`
+6. Deploys built files to `gh-pages` branch using `peaceiris/actions-gh-pages`
+7. Configures custom domain (mineseek.com.au) via CNAME
 
 **Important notes:**
 - The `gh-pages` branch is managed automatically - DO NOT modify it directly
