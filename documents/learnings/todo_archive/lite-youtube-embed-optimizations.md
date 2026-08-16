@@ -1,5 +1,7 @@
 # lite-youtube-embed Performance Optimizations Implementation
 
+> **Implemented status (verified 2026-08-16):** Implemented and ready to archive from documents/todo. Evidence: `src/app/extractor-grid/LiteYouTubeEmbed.jsx`, `public/lite-youtube-embed.css`, `src/app/extractor-grid/page.jsx`, `documents/guides/_lite_youtube_embed.md`, `package.json`; `npm test`, `npm run typecheck`, and `npm run build` pass.
+
 ## Overview
 
 Successfully implemented all recommended `lite-youtube-embed` performance optimizations for the Mine Seek Extractor Grid demo page at `/extractor-grid/`. These optimizations ensure minimal initial page load while maintaining full video functionality.
