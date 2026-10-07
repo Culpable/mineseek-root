@@ -44,3 +44,7 @@ next-env.d.ts
 
 # screenshots
 /screenshots
+
+# Raw test and browser output: traces, screenshots, videos, reports, logs and JSON observations.
+# See .cursor/rules/playwright-rules.mdc.
+.artifacts/

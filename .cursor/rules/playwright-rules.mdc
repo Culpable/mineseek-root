@@ -15,6 +15,8 @@ Here is how to take screenshots:
 <screenshot_instructions>
 1. Navigate to the page you want to screenshot using the `mcp_playwright_browser_navigate` tool call.
 2. Take the screenshot using the `mcp_playwright_browser_screen_capture` tool call.
+3. Save each screenshot you keep, and any other raw output (traces, videos, logs, JSON observations), to `.artifacts/<task>/<run>/` in the project root. Git ignores that folder. If a tool writes into the project anywhere else, move the file there; a tool's own temporary folder outside the project is also fine. Do not save new screenshots in the old `screenshots/` folder or any other folder Git can see.
+4. When a screenshot is reported as proof that a bug exists or a change works, write a Markdown record in `documents/evidence/<task>/` that names its raw-output path, and commit the record with the work.
 </screenshot_instructions>
 
 Here is how you check your work after taking a screenshot:
