@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url'
 import { promisify } from 'node:util'
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const supportedNodeVersion = '22.17.0'
+const supportedNodeVersion = '22.23.4'
 const execFileAsync = promisify(execFile)
 
 async function readRepositoryFile(relativePath) {

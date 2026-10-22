@@ -26,7 +26,7 @@ source ~/.zshrc  # or source ~/.bash_profile
 
 ### Node.js
 
-Required version: v22.17.0
+Required version: v22.23.4
 
 - Version specified in `.nvmrc`
 - `package.json` and `package-lock.json` require the same exact version
@@ -63,7 +63,7 @@ git push origin main
 **Automated deployment process:**
 
 1. GitHub Actions runner starts on Ubuntu latest
-2. Sets up Node.js v22.17.0 from `.nvmrc`
+2. Sets up Node.js v22.23.4 from `.nvmrc`
 3. Installs dependencies using `npm ci`
 4. Runs linting, type checks, and the test suite
 5. Builds static site using `npm run build`
